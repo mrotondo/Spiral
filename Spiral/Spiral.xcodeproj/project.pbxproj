@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D55E1F67158379F0006E74B8 /* color_only.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5C158379F0006E74B8 /* color_only.fsh */; };
+		D55E1F6A158379F0006E74B8 /* color_only.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5D158379F0006E74B8 /* color_only.vsh */; };
+		D55E1F6D158379F0006E74B8 /* particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5E158379F0006E74B8 /* particle.fsh */; };
+		D55E1F70158379F0006E74B8 /* particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5F158379F0006E74B8 /* particle.vsh */; };
+		D55E1F73158379F0006E74B8 /* position_only.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F60158379F0006E74B8 /* position_only.fsh */; };
+		D55E1F76158379F0006E74B8 /* position_only.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F61158379F0006E74B8 /* position_only.vsh */; };
+		D55E1F79158379F0006E74B8 /* single_color.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F62158379F0006E74B8 /* single_color.fsh */; };
+		D55E1F7C158379F0006E74B8 /* single_color.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F63158379F0006E74B8 /* single_color.vsh */; };
+		D55E1F7F158379F0006E74B8 /* texture_only.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F64158379F0006E74B8 /* texture_only.fsh */; };
+		D55E1F82158379F0006E74B8 /* texture_only.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F65158379F0006E74B8 /* texture_only.vsh */; };
 		D58B36C0158369FE00A18668 /* sourceUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36BC158369FE00A18668 /* sourceUtil.h */; };
 		D58B36C1158369FE00A18668 /* sourceUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36BC158369FE00A18668 /* sourceUtil.h */; };
 		D58B36C2158369FE00A18668 /* sourceUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = D58B36BD158369FE00A18668 /* sourceUtil.c */; };
@@ -137,6 +147,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D55E1F5C158379F0006E74B8 /* color_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = color_only.fsh; path = Shaders/color_only.fsh; sourceTree = SOURCE_ROOT; };
+		D55E1F5D158379F0006E74B8 /* color_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = color_only.vsh; path = Shaders/color_only.vsh; sourceTree = SOURCE_ROOT; };
+		D55E1F5E158379F0006E74B8 /* particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = particle.fsh; path = Shaders/particle.fsh; sourceTree = SOURCE_ROOT; };
+		D55E1F5F158379F0006E74B8 /* particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = particle.vsh; path = Shaders/particle.vsh; sourceTree = SOURCE_ROOT; };
+		D55E1F60158379F0006E74B8 /* position_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = position_only.fsh; path = Shaders/position_only.fsh; sourceTree = SOURCE_ROOT; };
+		D55E1F61158379F0006E74B8 /* position_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = position_only.vsh; path = Shaders/position_only.vsh; sourceTree = SOURCE_ROOT; };
+		D55E1F62158379F0006E74B8 /* single_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = single_color.fsh; path = Shaders/single_color.fsh; sourceTree = SOURCE_ROOT; };
+		D55E1F63158379F0006E74B8 /* single_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = single_color.vsh; path = Shaders/single_color.vsh; sourceTree = SOURCE_ROOT; };
+		D55E1F64158379F0006E74B8 /* texture_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = texture_only.fsh; path = Shaders/texture_only.fsh; sourceTree = SOURCE_ROOT; };
+		D55E1F65158379F0006E74B8 /* texture_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = texture_only.vsh; path = Shaders/texture_only.vsh; sourceTree = SOURCE_ROOT; };
 		D58B36BC158369FE00A18668 /* sourceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sourceUtil.h; sourceTree = "<group>"; };
 		D58B36BD158369FE00A18668 /* sourceUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sourceUtil.c; sourceTree = "<group>"; };
 		D58B36BE158369FE00A18668 /* ShaderProgramLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgramLoader.h; sourceTree = "<group>"; };
@@ -226,6 +246,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D551FD2E1583764600D33881 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				D55E1F5C158379F0006E74B8 /* color_only.fsh */,
+				D55E1F5D158379F0006E74B8 /* color_only.vsh */,
+				D55E1F5E158379F0006E74B8 /* particle.fsh */,
+				D55E1F5F158379F0006E74B8 /* particle.vsh */,
+				D55E1F60158379F0006E74B8 /* position_only.fsh */,
+				D55E1F61158379F0006E74B8 /* position_only.vsh */,
+				D55E1F62158379F0006E74B8 /* single_color.fsh */,
+				D55E1F63158379F0006E74B8 /* single_color.vsh */,
+				D55E1F64158379F0006E74B8 /* texture_only.fsh */,
+				D55E1F65158379F0006E74B8 /* texture_only.vsh */,
+			);
+			name = Shaders;
+			path = Spiral;
+			sourceTree = "<group>";
+		};
+		D55BB8701584736900146CB5 /* Spiral Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				D551FD2E1583764600D33881 /* Shaders */,
+			);
+			name = "Spiral Bundle";
+			sourceTree = "<group>";
+		};
 		D58B36B9158369DA00A18668 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +309,7 @@
 		D5E1ED90158365AC00DBE86E = {
 			isa = PBXGroup;
 			children = (
+				D55BB8701584736900146CB5 /* Spiral Bundle */,
 				D5E1EDA0158365AC00DBE86E /* Spiral */,
 				D5E1EDB4158365AC00DBE86E /* SpiralTests */,
 				D5E1ED9D158365AC00DBE86E /* Frameworks */,
@@ -588,6 +635,16 @@
 				D58B371C15836A5300A18668 /* SPMath.m in Sources */,
 				D58B372115836A5300A18668 /* SPAnimation.m in Sources */,
 				D58B372615836A5300A18668 /* SPParticleManager.m in Sources */,
+				D55E1F67158379F0006E74B8 /* color_only.fsh in Sources */,
+				D55E1F6A158379F0006E74B8 /* color_only.vsh in Sources */,
+				D55E1F6D158379F0006E74B8 /* particle.fsh in Sources */,
+				D55E1F70158379F0006E74B8 /* particle.vsh in Sources */,
+				D55E1F73158379F0006E74B8 /* position_only.fsh in Sources */,
+				D55E1F76158379F0006E74B8 /* position_only.vsh in Sources */,
+				D55E1F79158379F0006E74B8 /* single_color.fsh in Sources */,
+				D55E1F7C158379F0006E74B8 /* single_color.vsh in Sources */,
+				D55E1F7F158379F0006E74B8 /* texture_only.fsh in Sources */,
+				D55E1F82158379F0006E74B8 /* texture_only.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
