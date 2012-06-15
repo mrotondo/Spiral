@@ -7,7 +7,6 @@
 //
 
 #import "SPTextureOnlyEffect.h"
-#import "SPEffect+RegisterUniform.h"
 #import "ShaderProgramLoader.h"
 
 @implementation SPTextureOnlyEffect

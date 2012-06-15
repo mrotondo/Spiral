@@ -9,6 +9,10 @@
 #import "SPParticleManager.h"
 #import "SPParticleEffect.h"
 
+@implementation SPParticle
+
+@end
+
 @implementation SPParticleManager
 {
     int numVerticesPerParticle;
@@ -97,10 +101,12 @@
 
 - (void)drawParticles:(NSArray *)particles
 {
+#warning we don't support drawing particles from back to front yet, so translucent particles in 3D look weird
+    
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     
     int i = 0;
-    for (id<SPParticle> particle in particles)
+    for (SPParticle *particle in particles)
     {
         GLKVector3 position = particle.position;
         GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(position.x, position.y, 0);

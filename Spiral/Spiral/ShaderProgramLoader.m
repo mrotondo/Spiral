@@ -27,7 +27,7 @@ err = glGetError();								\
                              withColor:(BOOL)hasColor
                             withNormal:(BOOL)hasNormal
                           withTexCoord:(BOOL)hasTexCoord
-               andAdditionalAttributes:(NSDictionary *)attributeSPictionary
+               andAdditionalAttributes:(NSDictionary *)attributesDictionary
 {
     GetGLError();
     
@@ -88,7 +88,7 @@ err = glGetError();								\
 	}
     GetGLError();
     
-    [attributeSPictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [attributesDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         NSString *attributeName = key;
         NSNumber *attributeIndexNumber = obj;
         glBindAttribLocation(prgName, [attributeIndexNumber unsignedIntValue], [attributeName UTF8String]);

@@ -7,7 +7,6 @@
 //
 
 #import "SPParticleEffect.h"
-#import "SPEffect+RegisterUniform.h"
 
 @implementation SPParticleEffect
 {

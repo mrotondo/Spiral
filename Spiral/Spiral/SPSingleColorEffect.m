@@ -7,7 +7,6 @@
 //
 
 #import "SPSingleColorEffect.h"
-#import "SPEffect+RegisterUniform.h"
 
 @implementation SPSingleColorEffect
 {

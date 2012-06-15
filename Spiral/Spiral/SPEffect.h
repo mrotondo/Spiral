@@ -23,6 +23,8 @@
             withTexCoord:(BOOL)hasTexCoord
  andAdditionalAttributes:(NSDictionary *)attributeSPictionary;
 
+- (void)registerUniform:(NSString *)uniformName atLocation:(GLint *)uniformLocation;
+
 @property (nonatomic, readonly) GLuint programName;
 @property (nonatomic, strong) GLKEffectPropertyTransform *transform;
 @property (nonatomic) GLuint positionVertexAttribute;

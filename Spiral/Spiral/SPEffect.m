@@ -7,7 +7,6 @@
 //
 
 #import "SPEffect.h"
-#import "SPEffect+RegisterUniform.h"
 #import "sourceUtil.h"
 #import "ShaderProgramLoader.h"
 #import "SPEffectsManager.h"
@@ -64,6 +63,8 @@
 		// Load and Setup shaders for rendering //
 		//////////////////////////////////////////
 		
+        NSLog(@"Loading shader: %@", shaderName);
+        
 		demoSource *vtxSource = NULL;
 		demoSource *frgSource = NULL;
         NSString *filePathName;
@@ -101,6 +102,16 @@
         self.texCoordVertexAttribute = TEXCOORD_ATTRIB_IDX;
     }
     return self;
+}
+
+- (void)registerUniform:(NSString *)uniformName atLocation:(GLint *)uniformLocation
+{
+    *uniformLocation = glGetUniformLocation(self.programName, [uniformName UTF8String]);
+    
+    if (*uniformLocation < 0)
+    {
+        NSLog(@"No %@ in shader %@", uniformName, self);
+    }
 }
 
 - (void)dealloc

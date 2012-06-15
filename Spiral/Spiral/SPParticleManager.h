@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SPParticle <NSObject>
+@interface SPParticle : NSObject
 
 @property (nonatomic) GLKVector3 position;
 @property (nonatomic) GLKVector3 scales;

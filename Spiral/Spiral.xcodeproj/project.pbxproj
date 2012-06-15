@@ -32,11 +32,6 @@
 		D58B36D015836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
 		D58B36D115836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
 		D58B36D215836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
-		D58B36D315836A1300A18668 /* SPEffect+RegisterUniform.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36CC15836A1300A18668 /* SPEffect+RegisterUniform.h */; };
-		D58B36D415836A1300A18668 /* SPEffect+RegisterUniform.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36CC15836A1300A18668 /* SPEffect+RegisterUniform.h */; };
-		D58B36D515836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CD15836A1300A18668 /* SPEffect+RegisterUniform.m */; };
-		D58B36D615836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CD15836A1300A18668 /* SPEffect+RegisterUniform.m */; };
-		D58B36D715836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CD15836A1300A18668 /* SPEffect+RegisterUniform.m */; };
 		D58B36DE15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */; };
 		D58B36DF15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */; };
 		D58B36E015836A2100A18668 /* SPPositionOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */; };
@@ -163,8 +158,6 @@
 		D58B36BF158369FE00A18668 /* ShaderProgramLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderProgramLoader.m; sourceTree = "<group>"; };
 		D58B36CA15836A1300A18668 /* SPEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffect.h; sourceTree = "<group>"; };
 		D58B36CB15836A1300A18668 /* SPEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPEffect.m; sourceTree = "<group>"; };
-		D58B36CC15836A1300A18668 /* SPEffect+RegisterUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPEffect+RegisterUniform.h"; sourceTree = "<group>"; };
-		D58B36CD15836A1300A18668 /* SPEffect+RegisterUniform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPEffect+RegisterUniform.m"; sourceTree = "<group>"; };
 		D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPositionOnlyEffect.h; sourceTree = "<group>"; };
 		D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPositionOnlyEffect.m; sourceTree = "<group>"; };
 		D58B36DA15836A2100A18668 /* SPColorOnlyEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPColorOnlyEffect.h; sourceTree = "<group>"; };
@@ -279,8 +272,6 @@
 				D58B36FC15836A4200A18668 /* SPEffectsManager.m */,
 				D58B36CA15836A1300A18668 /* SPEffect.h */,
 				D58B36CB15836A1300A18668 /* SPEffect.m */,
-				D58B36CC15836A1300A18668 /* SPEffect+RegisterUniform.h */,
-				D58B36CD15836A1300A18668 /* SPEffect+RegisterUniform.m */,
 				D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */,
 				D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */,
 				D58B36DA15836A2100A18668 /* SPColorOnlyEffect.h */,
@@ -423,7 +414,6 @@
 				D58B36C0158369FE00A18668 /* sourceUtil.h in Headers */,
 				D58B36C5158369FE00A18668 /* ShaderProgramLoader.h in Headers */,
 				D58B36CE15836A1300A18668 /* SPEffect.h in Headers */,
-				D58B36D315836A1300A18668 /* SPEffect+RegisterUniform.h in Headers */,
 				D58B36DE15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */,
 				D58B36E315836A2100A18668 /* SPColorOnlyEffect.h in Headers */,
 				D58B36E815836A2100A18668 /* SPTextureOnlyEffect.h in Headers */,
@@ -452,7 +442,6 @@
 				D58B36C1158369FE00A18668 /* sourceUtil.h in Headers */,
 				D58B36C6158369FE00A18668 /* ShaderProgramLoader.h in Headers */,
 				D58B36CF15836A1300A18668 /* SPEffect.h in Headers */,
-				D58B36D415836A1300A18668 /* SPEffect+RegisterUniform.h in Headers */,
 				D58B36DF15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */,
 				D58B36E415836A2100A18668 /* SPColorOnlyEffect.h in Headers */,
 				D58B36E915836A2100A18668 /* SPTextureOnlyEffect.h in Headers */,
@@ -594,7 +583,6 @@
 				D58B36C2158369FE00A18668 /* sourceUtil.c in Sources */,
 				D58B36C7158369FE00A18668 /* ShaderProgramLoader.m in Sources */,
 				D58B36D015836A1300A18668 /* SPEffect.m in Sources */,
-				D58B36D515836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */,
 				D58B36E015836A2100A18668 /* SPPositionOnlyEffect.m in Sources */,
 				D58B36E515836A2100A18668 /* SPColorOnlyEffect.m in Sources */,
 				D58B36EA15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */,
@@ -623,7 +611,6 @@
 				D58B36C3158369FE00A18668 /* sourceUtil.c in Sources */,
 				D58B36C8158369FE00A18668 /* ShaderProgramLoader.m in Sources */,
 				D58B36D115836A1300A18668 /* SPEffect.m in Sources */,
-				D58B36D615836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */,
 				D58B36E115836A2100A18668 /* SPPositionOnlyEffect.m in Sources */,
 				D58B36E615836A2100A18668 /* SPColorOnlyEffect.m in Sources */,
 				D58B36EB15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */,
@@ -662,7 +649,6 @@
 				D58B36C4158369FE00A18668 /* sourceUtil.c in Sources */,
 				D58B36C9158369FE00A18668 /* ShaderProgramLoader.m in Sources */,
 				D58B36D215836A1300A18668 /* SPEffect.m in Sources */,
-				D58B36D715836A1300A18668 /* SPEffect+RegisterUniform.m in Sources */,
 				D58B36E215836A2100A18668 /* SPPositionOnlyEffect.m in Sources */,
 				D58B36E715836A2100A18668 /* SPColorOnlyEffect.m in Sources */,
 				D58B36EC15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */,
