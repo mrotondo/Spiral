@@ -162,6 +162,15 @@ GLfloat gCubeVertexData[216] =
     
     [self loadShaders];
     
+    NSLog(@"About to initialize shared effects manager");
+#warning Figure out why not all the textures are getting loaded!
+    [SPEffectsManager initializeSharedEffectsManager];
+    NSLog(@"Done initializing shared effects manager");
+    
+    
+    [SPGeometricPrimitives initializeSharedGeometricPrimitives];
+    
+    
     self.effect = [[GLKBaseEffect alloc] init];
     self.effect.light0.enabled = GL_TRUE;
     self.effect.light0.diffuseColor = GLKVector4Make(1.0f, 0.4f, 0.4f, 1.0f);
@@ -181,9 +190,6 @@ GLfloat gCubeVertexData[216] =
     glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(12));
     
     glBindVertexArrayOES(0);
-    
-    [SPEffectsManager initializeSharedEffectsManager];
-    [SPGeometricPrimitives initializeSharedGeometricPrimitives];
 }
 
 - (void)setupParticles
@@ -192,7 +198,7 @@ GLfloat gCubeVertexData[216] =
     
     particleManager = [[SPParticleManager alloc] initWithTexture:particleTexture.name];
     
-    int numParticles = 1000;
+    int numParticles = 100;
     NSMutableArray *mutableParticles = [NSMutableArray arrayWithCapacity:numParticles];
     for (int i = 0; i < numParticles; i++)
     {
@@ -339,6 +345,11 @@ GLfloat gCubeVertexData[216] =
         
         return NO;
     }
+    
+//    if (![self validateProgram:_program])
+//    {
+//        NSLog(@"DID NOT VALIDATE BUILT-IN PROGRAM");
+//    }
     
     // Get uniform locations.
     uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX] = glGetUniformLocation(_program, "modelViewProjectionMatrix");

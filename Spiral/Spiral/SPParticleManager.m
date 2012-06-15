@@ -57,7 +57,7 @@
 
 - (void)allocateVertices
 {
-    maxParticlesPerDrawCall = 1000;
+    maxParticlesPerDrawCall = 100;
     vertices = (ParticleVertexStruct *)malloc(numVerticesPerParticle * maxParticlesPerDrawCall * sizeof(ParticleVertexStruct));
 }
 

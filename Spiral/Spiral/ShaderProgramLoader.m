@@ -161,7 +161,7 @@ err = glGetError();								\
 		NSLog(@"Frag Shader compile log:\n%s\n", log);
 		free(log);
 	}
-	
+
 	glGetShaderiv(fragShader, GL_COMPILE_STATUS, &status);
     GetGLError();
 	if (status == 0)
@@ -205,6 +205,8 @@ err = glGetError();								\
 	}
     GetGLError();
 	
+#warning DO NOT VALIDATE FOR NOW, it seems to be broken on iOS 6. Booo
+#if 0
 	glValidateProgram(prgName);
     GetGLError();
 	glGetProgramiv(prgName, GL_INFO_LOG_LENGTH, &logLength);
@@ -225,7 +227,7 @@ err = glGetError();								\
 		return 0;
 	}
     GetGLError();
-	
+#endif
 	
 	glUseProgram(prgName);
     
