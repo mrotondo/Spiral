@@ -176,14 +176,14 @@ GLfloat gCubeVertexData[216] =
     self.effect.light0.diffuseColor = GLKVector4Make(1.0f, 0.4f, 0.4f, 1.0f);
     
     glEnable(GL_DEPTH_TEST);
-    
+
     glGenVertexArraysOES(1, &_vertexArray);
     glBindVertexArrayOES(_vertexArray);
-    
+
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(gCubeVertexData), gCubeVertexData, GL_STATIC_DRAW);
-    
+
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(0));
     glEnableVertexAttribArray(GLKVertexAttribNormal);
@@ -285,6 +285,7 @@ GLfloat gCubeVertexData[216] =
 
     glDisable(GL_DEPTH_TEST);
     glBindVertexArrayOES(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glEnable(GL_BLEND);
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     [particleManager drawParticles:particles];
