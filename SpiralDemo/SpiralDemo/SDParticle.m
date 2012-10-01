@@ -13,7 +13,7 @@
 + (GLKTextureInfo *)loadTexture
 {
     NSError *error;
-    GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"very_very_blurry_white_circle" ofType:@"png"] options:@{} error:&error];
+    GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"very_very_blurry_white_circle" ofType:@"png"] options:@{GLKTextureLoaderGenerateMipmaps: @YES} error:&error];
     if (!textureInfo)
     {
         NSLog(@"Couldn't load particle texture: %@", error);
