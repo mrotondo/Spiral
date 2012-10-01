@@ -138,10 +138,10 @@
     
     glBindVertexArrayOES(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+//    glEnable(GL_BLEND);
+//    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     [particleManager drawParticles:particles];
-    glDisable(GL_BLEND);
+//    glDisable(GL_BLEND);
 }
 
 @end
