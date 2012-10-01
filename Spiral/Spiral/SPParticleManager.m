@@ -8,6 +8,7 @@
 
 #import "SPParticleManager.h"
 #import "SPParticleEffect.h"
+#import "glUtil.h"
 
 @implementation SPParticle
 
@@ -18,11 +19,12 @@
     int numVerticesPerParticle;
     int numIndicesPerParticle;
 
-    GLKVector4 *quadVertices;
-    GLKVector2 *texCoords;
+    GLKVector4 *quadVertexPositions;
     
-    ParticleVertexStruct *vertices;
-    GLuint indexBuffer;
+    size_t particleVerticesDataSize;
+    ParticleVertexStruct *particleVerticesData;
+    GLuint textureCoordsVertexBuffer;
+    GLuint positionColorVertexBuffer;
     int maxParticlesPerDrawCall;
 
     GLuint texture;
@@ -33,14 +35,17 @@
 {
     self = [super init];
     if (self) {
-        numVerticesPerParticle = 4;
-        numIndicesPerParticle = 6;
+        // These are both 6 to account for degenerate points between quads, since we're using triangle strips to render the particles
+        numVerticesPerParticle = 6;
         
+        // Create the points that define the texture quad (unit square centered around (0, 0))
         [self generateGeometry];
         
+        // Allocate the memory we will use to dynamically refill the VBO with particle positions & colors each frame
         [self allocateVertices];
         
-        [self generateIndexBuffer];
+        // Create the static texture coords buffer and the dynamic position/color buffer
+        [self generateVertexBuffers];
         
         texture = aTexture;
     }
@@ -49,61 +54,91 @@
 
 - (void)dealloc
 {
-    free(quadVertices);
-    free(texCoords);
-    
-    free(vertices);
+    free(quadVertexPositions);
+    free(particleVerticesData);
+}
+
+- (void)generateGeometry
+{
+    // Static quad position data, to be transformed for each particle for each frame
+    quadVertexPositions = (GLKVector4 *)malloc(numVerticesPerParticle * sizeof(GLKVector4));
+    // first triangle
+    quadVertexPositions[0] = GLKVector4Make(-0.5, -0.5, 0, 1);
+    quadVertexPositions[1] = GLKVector4Make(-0.5, 0.5, 0, 1);
+    quadVertexPositions[2] = GLKVector4Make(0.5, -0.5, 0, 1);
+    // second triangle
+    quadVertexPositions[3] = GLKVector4Make(-0.5, 0.5, 0, 1);
+    quadVertexPositions[4] = GLKVector4Make(0.5, 0.5, 0, 1);
+    quadVertexPositions[5] = GLKVector4Make(0.5, -0.5, 0, 1);
 }
 
 - (void)allocateVertices
 {
-    maxParticlesPerDrawCall = 10000;
-    vertices = (ParticleVertexStruct *)malloc(numVerticesPerParticle * maxParticlesPerDrawCall * sizeof(ParticleVertexStruct));
+    maxParticlesPerDrawCall = 10000; // WHAT SHOULD THIS BE
+    particleVerticesDataSize = numVerticesPerParticle * maxParticlesPerDrawCall * sizeof(ParticleVertexStruct);
+    particleVerticesData = (ParticleVertexStruct *)malloc(particleVerticesDataSize);
 }
 
-- (void)generateIndexBuffer
+- (void)generateTextureCoordsVBO
 {
-    numIndicesPerParticle = 6;
-    int numIndices = maxParticlesPerDrawCall * numIndicesPerParticle;
-    unsigned int indices[numIndices];
+    // Static texture coords data
+    const GLKVector2 quadTextureCoordsData[] = {
+        // first triangle:
+        GLKVector2Make(0.0, 0.0),
+        GLKVector2Make(0.0, 1.0),
+        GLKVector2Make(1.0, 0.0),
+        // second triangle
+        GLKVector2Make(0.0, 1.0),
+        GLKVector2Make(1.0, 1.0),
+        GLKVector2Make(1.0, 0.0)
+    };
     
+    // We generate a vertex buffer that contains individual texture coords for each particle, even though they are all identical, because we
+    // can't mix indexed drawing with non-indexed (drawElements vs drawArrays)
+    size_t textureCoordsBufferDataSize = numVerticesPerParticle * maxParticlesPerDrawCall * sizeof(GLKVector2);
+    GLKVector2 *textureCoordsBufferData = malloc(textureCoordsBufferDataSize);
     for (int i = 0; i < maxParticlesPerDrawCall; i++)
     {
-        indices[i * 6 + 0] = i * 4 + 0;
-        indices[i * 6 + 1] = i * 4 + 1;
-        indices[i * 6 + 2] = i * 4 + 2;
-        indices[i * 6 + 3] = i * 4 + 3;
-        indices[i * 6 + 4] = i * 4 + 3;
-        indices[i * 6 + 5] = (i + 1) * 4 + 0;
+        for (int j = 0; j < numVerticesPerParticle; j++)
+        {
+            textureCoordsBufferData[i * numVerticesPerParticle + j] = quadTextureCoordsData[j];
+        }
     }
     
-    glGenBuffers(1, &indexBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(unsigned int), indices, GL_STATIC_DRAW);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    // Generate and populate the texture coords VBO
+    glGenBuffers(1, &textureCoordsVertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, textureCoordsVertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, textureCoordsBufferDataSize, textureCoordsBufferData, GL_STATIC_DRAW);
 }
 
-
-- (void)generateGeometry
+- (void)generatePositionVBO
 {
-    quadVertices = (GLKVector4 *)malloc(numVerticesPerParticle * sizeof(GLKVector4));
-    quadVertices[0] = GLKVector4Make(-0.5, -0.5, 0, 1);
-    quadVertices[1] = GLKVector4Make(-0.5, 0.5, 0, 1);
-    quadVertices[2] = GLKVector4Make(0.5, -0.5, 0, 1);
-    quadVertices[3] = GLKVector4Make(0.5, 0.5, 0, 1);
+    // We zero out the position & color data array for now, since it will be populated with meaningful data before drawing
+    memset(particleVerticesData, 0, particleVerticesDataSize);
+    
+    // Generate the position and color VBO
+    glGenBuffers(1, &positionColorVertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, positionColorVertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, particleVerticesDataSize, particleVerticesData, GL_DYNAMIC_DRAW);
+}
 
-    texCoords = (GLKVector2 *)malloc(numVerticesPerParticle * sizeof(GLKVector2));
-    texCoords[0] = GLKVector2Make(0, 0);
-    texCoords[1] = GLKVector2Make(0, 1);
-    texCoords[2] = GLKVector2Make(1, 0);
-    texCoords[3] = GLKVector2Make(1, 1);
+- (void)generateVertexBuffers
+{
+    [self generateTextureCoordsVBO];
+    [self generatePositionVBO];
 }
 
 - (void)drawParticles:(NSArray *)particles
 {
 #warning we don't support drawing particles from back to front yet, so translucent particles in 3D look weird
     
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+    SPParticleEffect *effect = [SPParticleEffect sharedInstance];
+    effect.texture.name = texture;
+    [effect prepareToDraw];
+    
+    glBindBuffer(GL_ARRAY_BUFFER, textureCoordsVertexBuffer);
+    glVertexAttribPointer(effect.texCoordVertexAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(GLKVector2), (void*)0);
+    glEnableVertexAttribArray(effect.texCoordVertexAttribute);
     
     int i = 0;
     for (SPParticle *particle in particles)
@@ -117,46 +152,49 @@
         
         for (int j = 0; j < numVerticesPerParticle; j++)
         {
-            vertices[i * numVerticesPerParticle + j].position = GLKMatrix4MultiplyVector4(modelViewMatrix, quadVertices[j]);
-            vertices[i * numVerticesPerParticle + j].color = particle.color;
-            vertices[i * numVerticesPerParticle + j].texCoord = texCoords[j];
+            particleVerticesData[i * numVerticesPerParticle + j].position = GLKMatrix4MultiplyVector4(modelViewMatrix, quadVertexPositions[j]);
+            particleVerticesData[i * numVerticesPerParticle + j].color = particle.color;
         }
         
         ++i;
         
         if (i == maxParticlesPerDrawCall)
         {
-            [self drawNumParticles:i];
+            [self drawNumParticles:i withEffect:effect];
             i = 0;
         }
     }
     // draw the leftovers
     if (i > 0)
     {
-        [self drawNumParticles:i];
+        [self drawNumParticles:i withEffect:effect];
     }
-    
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-}
-
-- (void)drawNumParticles:(unsigned int)numParticles
-{
-    SPParticleEffect *effect = [SPParticleEffect sharedInstance];
-    effect.texture.name = texture;
-    [effect prepareToDraw];
-    
-    glEnableVertexAttribArray(effect.positionVertexAttribute);
-    glEnableVertexAttribArray(effect.colorVertexAttribute);
-    glEnableVertexAttribArray(effect.texCoordVertexAttribute);
-    glVertexAttribPointer(effect.positionVertexAttribute, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleVertexStruct), &vertices[0].position);
-    glVertexAttribPointer(effect.colorVertexAttribute, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleVertexStruct), &vertices[0].color);
-    glVertexAttribPointer(effect.texCoordVertexAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(ParticleVertexStruct), &vertices[0].texCoord);
-    
-    glDrawElements(GL_TRIANGLE_STRIP, numParticles * numIndicesPerParticle, GL_UNSIGNED_INT, (void *)0);
     
     glDisableVertexAttribArray(effect.positionVertexAttribute);
     glDisableVertexAttribArray(effect.colorVertexAttribute);
     glDisableVertexAttribArray(effect.texCoordVertexAttribute);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+- (void)drawNumParticles:(unsigned int)numParticles withEffect:(SPEffect *)effect
+{
+    glBindBuffer(GL_ARRAY_BUFFER, positionColorVertexBuffer);
+    GetGLError();
+
+    glBufferSubData(GL_ARRAY_BUFFER, 0, particleVerticesDataSize, particleVerticesData);
+
+    GetGLError();
+    
+//    glFlush();
+    
+    glVertexAttribPointer(effect.positionVertexAttribute, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleVertexStruct), (void *)offsetof(ParticleVertexStruct, position));
+    glVertexAttribPointer(effect.colorVertexAttribute, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleVertexStruct), (void *)offsetof(ParticleVertexStruct, color));
+    
+    glEnableVertexAttribArray(effect.positionVertexAttribute);
+    glEnableVertexAttribArray(effect.colorVertexAttribute);
+    
+    glDrawArrays(GL_TRIANGLES, 0, numParticles * numVerticesPerParticle);
+    
 }
 
 @end

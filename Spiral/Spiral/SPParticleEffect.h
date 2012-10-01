@@ -11,7 +11,7 @@
 typedef struct _ParticleVertexStruct {
     GLKVector4 position;
     GLKVector4 color;
-    GLKVector2 texCoord;
+    // We don't store texture here because it is the same for every particle
 } ParticleVertexStruct;
 
 @interface SPParticleEffect : SPEffect
