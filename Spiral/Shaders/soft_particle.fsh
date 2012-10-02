@@ -32,7 +32,8 @@ void main()
     float scale = 0.5;
     float fade = clamp((sceneDepth - particleDepth) * scale, 0.0, 1.0);
     vec4 color = vColor * texture2D(texture, vTexCoord);
-    color = vColor;
     color.a *= fade;
+//    color = vColor;
+//    color = vec4((sceneDepth - 1.0) / 9.0, 0, 0, 1);
     gl_FragColor = color;
 }

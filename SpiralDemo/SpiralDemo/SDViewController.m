@@ -57,7 +57,7 @@
     
     [self setupParticles];
     
-    depthTarget = [[SPOffscreenRenderTarget alloc] initWithTextureSize:GLKVector2Make(256, 256) depthOnly:YES];
+    depthTarget = [[SPOffscreenRenderTarget alloc] initWithTextureSize:GLKVector2Make(512, 512) depthOnly:YES];
 }
 
 - (void)viewDidUnload
@@ -104,17 +104,17 @@
     
     particleManager = [[SPParticleManager alloc] initWithTexture:particleTexture.name];
     
-    int numParticles = 1;
+    int numParticles = 100;
     NSMutableArray *mutableParticles = [NSMutableArray arrayWithCapacity:numParticles];
     for (int i = 0; i < numParticles; i++)
     {
         SDParticle *particle = [[SDParticle alloc] init];
 //        particle.scales = GLKVector3MultiplyScalar([SPGLKitHelper randomGLKVector3], 0.1);
-        float scale = 4.0 + 2.0 * (arc4random() / (float)0x100000000);
+        float scale = 2.0 * (arc4random() / (float)0x100000000);
         particle.baseScales = GLKVector3Make(scale, scale, 1);
         particle.basePosition = GLKVector3Add(GLKVector3Make(-2.5, -2.5, 0.5),
                                           GLKVector3MultiplyScalar([SPGLKitHelper randomGLKVector3], 5));
-        particle.basePosition = GLKVector3Make(2, 2, 0);
+//        particle.basePosition = GLKVector3Make(2, 2, 0);
         particle.baseColor = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1.0);
         
         [mutableParticles addObject:particle];
@@ -151,20 +151,20 @@
 
 - (void)drawScene
 {
+    glDepthMask(GL_TRUE);
     glEnable(GL_DEPTH_TEST);
     [self drawShapes];
     
-    glDisable(GL_DEPTH_TEST);
+    glDepthMask(GL_FALSE);
     [self drawParticles];
-
-    glEnable(GL_DEPTH_TEST);
-    [self drawShapes];
+    
+    glDepthMask(GL_TRUE);
 }
 
 - (void)drawParticles
 {
     glEnable(GL_BLEND);
-    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     [particleManager drawParticles:particles];
     glDisable(GL_BLEND);
 }
@@ -173,19 +173,19 @@
 {
     float rotation = totalTimeElapsed * 0.5;
     GLKMatrix4 circleTransform = GLKMatrix4Identity;
-    circleTransform = GLKMatrix4Translate(circleTransform, 0, 0, -4);
+    circleTransform = GLKMatrix4Translate(circleTransform, 0, 0, -6);
     circleTransform = GLKMatrix4Rotate(circleTransform, rotation, 0, 1, 0);
     
     [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1, 0, 0, 1) andModelViewMatrix:circleTransform];
     
     GLKMatrix4 quadTransform = GLKMatrix4Identity;
-    quadTransform = GLKMatrix4Translate(quadTransform, 0, 0, -4);
+    quadTransform = GLKMatrix4Translate(quadTransform, 0, 0, -6);
     quadTransform = GLKMatrix4Rotate(quadTransform, rotation * 2, 1, 0, 0);
     
     [SPGeometricPrimitives drawQuadWithColor:GLKVector4Make(0, 1, 0, 1) andModelViewMatrix:quadTransform];
     
     GLKMatrix4 triTransform = GLKMatrix4Identity;
-    triTransform = GLKMatrix4Translate(triTransform, 0, 0, -4);
+    triTransform = GLKMatrix4Translate(triTransform, 0, 0, -6);
     triTransform = GLKMatrix4Rotate(triTransform, rotation * 4, 1, 0, 1);
     
     [SPGeometricPrimitives drawRegularPolygonWithNumSides:3 withColor:GLKVector4Make(0, 0, 1, 1) andModelViewMatrix:triTransform];
@@ -193,7 +193,7 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClearColor(0.25, 0.25, 0.25, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     glBindVertexArrayOES(0);
