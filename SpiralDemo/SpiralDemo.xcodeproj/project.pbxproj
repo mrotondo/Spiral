@@ -34,6 +34,8 @@
 		D5216A43158B1E1F001CBFB7 /* libSpiral iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A3E158B1E14001CBFB7 /* libSpiral iOS.a */; };
 		D5216A46158B1E5F001CBFB7 /* SDParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = D5216A45158B1E5F001CBFB7 /* SDParticle.m */; };
 		D5216A48158B22D0001CBFB7 /* very_very_blurry_white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D5216A47158B22D0001CBFB7 /* very_very_blurry_white_circle.png */; };
+		D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A8161A639C00B8B7CF /* soft_particle.fsh */; };
+		D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A9161A639C00B8B7CF /* soft_particle.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		D5216A44158B1E5F001CBFB7 /* SDParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDParticle.h; sourceTree = "<group>"; };
 		D5216A45158B1E5F001CBFB7 /* SDParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDParticle.m; sourceTree = "<group>"; };
 		D5216A47158B22D0001CBFB7 /* very_very_blurry_white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = very_very_blurry_white_circle.png; sourceTree = "<group>"; };
+		D59B26A8161A639C00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = soft_particle.fsh; path = ../Shaders/soft_particle.fsh; sourceTree = "<group>"; };
+		D59B26A9161A639C00B8B7CF /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = soft_particle.vsh; path = ../Shaders/soft_particle.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 			children = (
 				D51718E3158BA95F00EC9AA8 /* color_only.fsh */,
 				D51718E4158BA95F00EC9AA8 /* color_only.vsh */,
+				D59B26A8161A639C00B8B7CF /* soft_particle.fsh */,
+				D59B26A9161A639C00B8B7CF /* soft_particle.vsh */,
 				D51718E5158BA95F00EC9AA8 /* particle.fsh */,
 				D51718E6158BA95F00EC9AA8 /* particle.vsh */,
 				D51718E7158BA95F00EC9AA8 /* position_only.fsh */,
@@ -311,6 +317,8 @@
 				D51718FE158BA99C00EC9AA8 /* single_color.vsh in Resources */,
 				D51718FF158BA99C00EC9AA8 /* texture_only.fsh in Resources */,
 				D5171900158BA99C00EC9AA8 /* texture_only.vsh in Resources */,
+				D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */,
+				D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

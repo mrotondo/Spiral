@@ -12,4 +12,8 @@
 
 + (GLKTextureInfo *)loadTexture;
 
+@property (nonatomic) GLKVector3 baseScales;
+@property (nonatomic) GLKVector3 basePosition;
+@property (nonatomic) GLKVector4 baseColor;
+
 @end

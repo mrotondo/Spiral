@@ -7,7 +7,7 @@
 //
 
 #import "SPParticleManager.h"
-#import "SPParticleEffect.h"
+#import "SPSoftParticleEffect.h"
 #import "glUtil.h"
 
 @implementation SPParticle
@@ -132,7 +132,7 @@
 {
 #warning we don't support drawing particles from back to front yet, so translucent particles in 3D look weird
     
-    SPParticleEffect *effect = [SPParticleEffect sharedInstance];
+    SPSoftParticleEffect *effect = [SPSoftParticleEffect sharedInstance];
     effect.texture.name = texture;
     [effect prepareToDraw];
     
@@ -144,7 +144,7 @@
     for (SPParticle *particle in particles)
     {
         GLKVector3 position = particle.position;
-        GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(position.x, position.y, 0);
+        GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-position.x, -position.y, -position.z);
 #warning we only rotate around the z axis for now.
         modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, particle.angles.z, 0, 0, 1);
         GLKVector3 scales = particle.scales;

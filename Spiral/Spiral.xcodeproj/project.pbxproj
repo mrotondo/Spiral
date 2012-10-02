@@ -89,6 +89,17 @@
 		D58B372515836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372615836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372715836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
+		D59B26A1161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
+		D59B26A2161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
+		D59B26A3161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
+		D59B26A4161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
+		D59B26A5161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
+		D59B26A6161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
+		D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
+		D59B26AF161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
+		D59B26B0161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
+		D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */; };
+		D59B26B2161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */; };
 		D5E1ED9F158365AC00DBE86E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1ED9E158365AC00DBE86E /* Foundation.framework */; };
 		D5E1EDA5158365AC00DBE86E /* Spiral.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1EDA4158365AC00DBE86E /* Spiral.m */; };
 		D5E1EDAD158365AC00DBE86E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1EDAC158365AC00DBE86E /* SenTestingKit.framework */; };
@@ -181,6 +192,10 @@
 		D58B370A15836A5300A18668 /* SPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAnimation.m; sourceTree = "<group>"; };
 		D58B370B15836A5300A18668 /* SPParticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParticleManager.h; sourceTree = "<group>"; };
 		D58B370C15836A5300A18668 /* SPParticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPParticleManager.m; sourceTree = "<group>"; };
+		D59B269F161A638A00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.fsh; path = Shaders/soft_particle.fsh; sourceTree = SOURCE_ROOT; };
+		D59B26A0161A638A00B8B7CF /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.vsh; path = Shaders/soft_particle.vsh; sourceTree = SOURCE_ROOT; };
+		D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoftParticleEffect.m; sourceTree = "<group>"; };
+		D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSoftParticleEffect.h; sourceTree = "<group>"; };
 		D5E1ED9B158365AC00DBE86E /* libSpiral iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSpiral iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E1ED9E158365AC00DBE86E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5E1EDA2158365AC00DBE86E /* Spiral-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spiral-Prefix.pch"; sourceTree = "<group>"; };
@@ -242,6 +257,8 @@
 		D551FD2E1583764600D33881 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				D59B269F161A638A00B8B7CF /* soft_particle.fsh */,
+				D59B26A0161A638A00B8B7CF /* soft_particle.vsh */,
 				D55E1F5C158379F0006E74B8 /* color_only.fsh */,
 				D55E1F5D158379F0006E74B8 /* color_only.vsh */,
 				D55E1F5E158379F0006E74B8 /* particle.fsh */,
@@ -282,6 +299,8 @@
 				D58B36EE15836A3000A18668 /* SPSingleColorEffect.m */,
 				D58B36EF15836A3000A18668 /* SPParticleEffect.h */,
 				D58B36F015836A3000A18668 /* SPParticleEffect.m */,
+				D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */,
+				D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -426,6 +445,7 @@
 				D58B371915836A5300A18668 /* SPMath.h in Headers */,
 				D58B371E15836A5300A18668 /* SPAnimation.h in Headers */,
 				D58B372315836A5300A18668 /* SPParticleManager.h in Headers */,
+				D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +474,7 @@
 				D58B371A15836A5300A18668 /* SPMath.h in Headers */,
 				D58B371F15836A5300A18668 /* SPAnimation.h in Headers */,
 				D58B372415836A5300A18668 /* SPParticleManager.h in Headers */,
+				D59B26B2161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +615,9 @@
 				D58B371B15836A5300A18668 /* SPMath.m in Sources */,
 				D58B372015836A5300A18668 /* SPAnimation.m in Sources */,
 				D58B372515836A5300A18668 /* SPParticleManager.m in Sources */,
+				D59B26A1161A638A00B8B7CF /* soft_particle.fsh in Sources */,
+				D59B26A4161A638A00B8B7CF /* soft_particle.vsh in Sources */,
+				D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +656,9 @@
 				D55E1F7C158379F0006E74B8 /* single_color.vsh in Sources */,
 				D55E1F7F158379F0006E74B8 /* texture_only.fsh in Sources */,
 				D55E1F82158379F0006E74B8 /* texture_only.vsh in Sources */,
+				D59B26A2161A638A00B8B7CF /* soft_particle.fsh in Sources */,
+				D59B26A5161A638A00B8B7CF /* soft_particle.vsh in Sources */,
+				D59B26AF161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +687,9 @@
 				D58B371D15836A5300A18668 /* SPMath.m in Sources */,
 				D58B372215836A5300A18668 /* SPAnimation.m in Sources */,
 				D58B372715836A5300A18668 /* SPParticleManager.m in Sources */,
+				D59B26A3161A638A00B8B7CF /* soft_particle.fsh in Sources */,
+				D59B26A6161A638A00B8B7CF /* soft_particle.vsh in Sources */,
+				D59B26B0161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
