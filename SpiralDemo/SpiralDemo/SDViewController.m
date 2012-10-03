@@ -91,11 +91,11 @@
 {
     [EAGLContext setCurrentContext:self.context];
     
-    NSLog(@"About to initialize shared effects manager");
     [SPEffectsManager initializeSharedEffectsManager];
-    NSLog(@"Done initializing shared effects manager");
     
     [SPGeometricPrimitives initializeSharedGeometricPrimitives];
+    
+    glClearDepthf(1.0);
 }
 
 - (void)setupParticles
@@ -104,18 +104,20 @@
     
     particleManager = [[SPParticleManager alloc] initWithTexture:particleTexture.name];
     
-    int numParticles = 100;
+    int numParticles = 20;
     NSMutableArray *mutableParticles = [NSMutableArray arrayWithCapacity:numParticles];
     for (int i = 0; i < numParticles; i++)
     {
         SDParticle *particle = [[SDParticle alloc] init];
-//        particle.scales = GLKVector3MultiplyScalar([SPGLKitHelper randomGLKVector3], 0.1);
-        float scale = 2.0 * (arc4random() / (float)0x100000000);
+        float scale = 1.0 + 2.0 * (arc4random() / (float)0x100000000);
         particle.baseScales = GLKVector3Make(scale, scale, 1);
-        particle.basePosition = GLKVector3Add(GLKVector3Make(-2.5, -2.5, 0.5),
-                                          GLKVector3MultiplyScalar([SPGLKitHelper randomGLKVector3], 5));
-//        particle.basePosition = GLKVector3Make(2, 2, 0);
+        
+        GLKVector2 xyPosition = GLKVector2Add(GLKVector2Make(-1.0, -1.0), GLKVector2MultiplyScalar([SPGLKitHelper randomGLKVector2], 2.0));
+        particle.basePosition = GLKVector3Make(xyPosition.x, xyPosition.y, 5.0);
+
         particle.baseColor = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1.0);
+
+        particle.oscillationRate = -1.0 + 2.0 * (arc4random() / (float)0x100000000);
         
         [mutableParticles addObject:particle];
         
@@ -143,7 +145,7 @@
     [[SPEffectsManager sharedEffectsManager] setModelViewMatrix:GLKMatrix4Identity];
     
     for (SDParticle *particle in particles) {
-        particle.position = GLKVector3Add(particle.basePosition, GLKVector3Make(0, 0, totalTimeElapsed * 0.7));
+        particle.position = GLKVector3Add(particle.basePosition, GLKVector3Make(0, 0, 4.0 * sinf(particle.oscillationRate * totalTimeElapsed)));
         particle.color = particle.baseColor; //GLKVector4MultiplyScalar(particle.baseColor, 0.5 * (1 + sinf(totalTimeElapsed)) );
         particle.scales = particle.baseScales;
     }
@@ -173,19 +175,19 @@
 {
     float rotation = totalTimeElapsed * 0.5;
     GLKMatrix4 circleTransform = GLKMatrix4Identity;
-    circleTransform = GLKMatrix4Translate(circleTransform, 0, 0, -6);
+    circleTransform = GLKMatrix4Translate(circleTransform, 0, 0, -5);
     circleTransform = GLKMatrix4Rotate(circleTransform, rotation, 0, 1, 0);
     
     [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1, 0, 0, 1) andModelViewMatrix:circleTransform];
     
     GLKMatrix4 quadTransform = GLKMatrix4Identity;
-    quadTransform = GLKMatrix4Translate(quadTransform, 0, 0, -6);
+    quadTransform = GLKMatrix4Translate(quadTransform, 0, 0, -5);
     quadTransform = GLKMatrix4Rotate(quadTransform, rotation * 2, 1, 0, 0);
     
     [SPGeometricPrimitives drawQuadWithColor:GLKVector4Make(0, 1, 0, 1) andModelViewMatrix:quadTransform];
     
     GLKMatrix4 triTransform = GLKMatrix4Identity;
-    triTransform = GLKMatrix4Translate(triTransform, 0, 0, -6);
+    triTransform = GLKMatrix4Translate(triTransform, 0, 0, -5);
     triTransform = GLKMatrix4Rotate(triTransform, rotation * 4, 1, 0, 1);
     
     [SPGeometricPrimitives drawRegularPolygonWithNumSides:3 withColor:GLKVector4Make(0, 0, 1, 1) andModelViewMatrix:triTransform];
@@ -193,6 +195,8 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    glClearDepthf(1.0);
+//    glClearColor(1.0, 0.0, 0.0, 1.0);
     glClearColor(0.25, 0.25, 0.25, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     

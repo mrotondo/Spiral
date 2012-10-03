@@ -46,7 +46,7 @@
             GLuint depthRenderbuffer;
             glGenRenderbuffers(1, &depthRenderbuffer);
             glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
-            glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, textureSize.x, textureSize.y);
+            glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT32_OES, textureSize.x, textureSize.y);
             
             // specify the texture as a color format
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,  textureSize.x, textureSize.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);

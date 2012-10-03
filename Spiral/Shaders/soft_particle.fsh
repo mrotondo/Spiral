@@ -29,11 +29,12 @@ void main()
     vec2 normalizedDeviceCoords = gl_FragCoord.xy / viewportSize;
     float sceneDepth = depthToZPosition(texture2D(sceneDepthTexture, normalizedDeviceCoords).z);
     float particleDepth = depthToZPosition(gl_FragCoord.z);
-    float scale = 0.5;
+    float scale = 1.0;
     float fade = clamp((sceneDepth - particleDepth) * scale, 0.0, 1.0);
     vec4 color = vColor * texture2D(texture, vTexCoord);
-    color.a *= fade;
 //    color = vColor;
-//    color = vec4((sceneDepth - 1.0) / 9.0, 0, 0, 1);
+//    color = vec4(texture2D(sceneDepthTexture, normalizedDeviceCoords).z, 0, 0, 1);
+//    color = vec4(1, 1, 1, 1);
+    color.a *= fade;
     gl_FragColor = color;
 }

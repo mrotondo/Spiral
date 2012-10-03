@@ -15,5 +15,6 @@
 @property (nonatomic) GLKVector3 baseScales;
 @property (nonatomic) GLKVector3 basePosition;
 @property (nonatomic) GLKVector4 baseColor;
+@property (nonatomic) float oscillationRate;
 
 @end
