@@ -89,10 +89,8 @@
 		D58B372515836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372615836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372715836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
-		D59B26A1161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
 		D59B26A2161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
 		D59B26A3161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
-		D59B26A4161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
 		D59B26A5161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
 		D59B26A6161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
 		D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
@@ -615,8 +613,6 @@
 				D58B371B15836A5300A18668 /* SPMath.m in Sources */,
 				D58B372015836A5300A18668 /* SPAnimation.m in Sources */,
 				D58B372515836A5300A18668 /* SPParticleManager.m in Sources */,
-				D59B26A1161A638A00B8B7CF /* soft_particle.fsh in Sources */,
-				D59B26A4161A638A00B8B7CF /* soft_particle.vsh in Sources */,
 				D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

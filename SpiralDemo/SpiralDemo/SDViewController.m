@@ -51,7 +51,7 @@
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
-    self.preferredFramesPerSecond = 30;
+    self.preferredFramesPerSecond = 60;
     
     [self setupGL];
     
@@ -94,8 +94,6 @@
     [SPEffectsManager initializeSharedEffectsManager];
     
     [SPGeometricPrimitives initializeSharedGeometricPrimitives];
-    
-    glClearDepthf(1.0);
 }
 
 - (void)setupParticles
@@ -114,7 +112,7 @@
         
         GLKVector2 xyPosition = GLKVector2Add(GLKVector2Make(-1.0, -1.0), GLKVector2MultiplyScalar([SPGLKitHelper randomGLKVector2], 2.0));
         particle.basePosition = GLKVector3Make(xyPosition.x, xyPosition.y, 5.0);
-
+        
         particle.baseColor = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1.0);
 
         particle.oscillationRate = -1.0 + 2.0 * (arc4random() / (float)0x100000000);

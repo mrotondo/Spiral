@@ -42,9 +42,20 @@
 		D522DE6C161C189000DEBA6A /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D522DE6B161C189000DEBA6A /* DDAppDelegate.m */; };
 		D522DE6F161C189000DEBA6A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D522DE6D161C189000DEBA6A /* MainStoryboard_iPhone.storyboard */; };
 		D522DE72161C189000DEBA6A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D522DE70161C189000DEBA6A /* MainStoryboard_iPad.storyboard */; };
-		D522DE74161C189000DEBA6A /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D522DE73161C189000DEBA6A /* Shader.fsh */; };
-		D522DE76161C189000DEBA6A /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D522DE75161C189000DEBA6A /* Shader.vsh */; };
 		D522DE79161C189000DEBA6A /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D522DE78161C189000DEBA6A /* DDViewController.m */; };
+		D5602301161C1F0C00D2FF9E /* libSpiral iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A3E158B1E14001CBFB7 /* libSpiral iOS.a */; };
+		D5602302161C1F9300D2FF9E /* color_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E3158BA95F00EC9AA8 /* color_only.fsh */; };
+		D5602303161C1F9300D2FF9E /* color_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E4158BA95F00EC9AA8 /* color_only.vsh */; };
+		D5602304161C1F9300D2FF9E /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A8161A639C00B8B7CF /* soft_particle.fsh */; };
+		D5602305161C1F9300D2FF9E /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A9161A639C00B8B7CF /* soft_particle.vsh */; };
+		D5602306161C1F9300D2FF9E /* particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E5158BA95F00EC9AA8 /* particle.fsh */; };
+		D5602307161C1F9300D2FF9E /* particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E6158BA95F00EC9AA8 /* particle.vsh */; };
+		D5602308161C1F9300D2FF9E /* position_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E7158BA95F00EC9AA8 /* position_only.fsh */; };
+		D5602309161C1F9300D2FF9E /* position_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E8158BA95F00EC9AA8 /* position_only.vsh */; };
+		D560230A161C1F9300D2FF9E /* single_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718E9158BA95F00EC9AA8 /* single_color.fsh */; };
+		D560230B161C1F9300D2FF9E /* single_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EA158BA95F00EC9AA8 /* single_color.vsh */; };
+		D560230C161C1F9300D2FF9E /* texture_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EB158BA95F00EC9AA8 /* texture_only.fsh */; };
+		D560230D161C1F9300D2FF9E /* texture_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EC158BA95F00EC9AA8 /* texture_only.vsh */; };
 		D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A8161A639C00B8B7CF /* soft_particle.fsh */; };
 		D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A9161A639C00B8B7CF /* soft_particle.vsh */; };
 /* End PBXBuildFile section */
@@ -140,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5602301161C1F0C00D2FF9E /* libSpiral iOS.a in Frameworks */,
 				D522DE5C161C189000DEBA6A /* UIKit.framework in Frameworks */,
 				D522DE5D161C189000DEBA6A /* Foundation.framework in Frameworks */,
 				D522DE5E161C189000DEBA6A /* CoreGraphics.framework in Frameworks */,
@@ -404,11 +416,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5602302161C1F9300D2FF9E /* color_only.fsh in Resources */,
+				D5602303161C1F9300D2FF9E /* color_only.vsh in Resources */,
+				D5602304161C1F9300D2FF9E /* soft_particle.fsh in Resources */,
+				D5602305161C1F9300D2FF9E /* soft_particle.vsh in Resources */,
+				D5602306161C1F9300D2FF9E /* particle.fsh in Resources */,
+				D5602307161C1F9300D2FF9E /* particle.vsh in Resources */,
+				D5602308161C1F9300D2FF9E /* position_only.fsh in Resources */,
+				D5602309161C1F9300D2FF9E /* position_only.vsh in Resources */,
+				D560230A161C1F9300D2FF9E /* single_color.fsh in Resources */,
+				D560230B161C1F9300D2FF9E /* single_color.vsh in Resources */,
+				D560230C161C1F9300D2FF9E /* texture_only.fsh in Resources */,
+				D560230D161C1F9300D2FF9E /* texture_only.vsh in Resources */,
 				D522DE66161C189000DEBA6A /* InfoPlist.strings in Resources */,
 				D522DE6F161C189000DEBA6A /* MainStoryboard_iPhone.storyboard in Resources */,
 				D522DE72161C189000DEBA6A /* MainStoryboard_iPad.storyboard in Resources */,
-				D522DE74161C189000DEBA6A /* Shader.fsh in Resources */,
-				D522DE76161C189000DEBA6A /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +596,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrawDemo/DrawDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../Spiral/**";
 				INFOPLIST_FILE = "DrawDemo/DrawDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,6 +611,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrawDemo/DrawDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../Spiral/**";
 				INFOPLIST_FILE = "DrawDemo/DrawDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

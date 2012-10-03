@@ -10,8 +10,8 @@
 #import "SPTextureOnlyEffect.h"
 #import "SPSingleColorEffect.h"
 
-static NSString *SPCircleID = @"SPCircleID";
-static NSString *SPQuadID = @"SPQuadID";
+NSNumber *SPCircleID;
+NSNumber *SPQuadID;
 
 static SPGeometricPrimitives *sharedGeometricPrimitives;
 
@@ -158,6 +158,8 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
 {
     self = [super init];
     if (self) {
+        SPCircleID = @32;
+        SPQuadID = @(-1);
         primitives = [@{
         SPCircleID : [[SPStaticGeometry alloc] initWithGeometryInitializationBlock:
                       ^SPStaticGeometryInfoStruct
@@ -174,19 +176,19 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
     return self;
 }
 
-- (SPStaticGeometry *)primitiveForKey:(NSString *)key
+- (SPStaticGeometry *)primitiveForKey:(id)key
 {
     return [primitives objectForKey:key];
 }
 
-+ (NSString *)primitiveIDForRegularPolygonWithNumSides:(int)numSides
++ (NSNumber *)primitiveIDForRegularPolygonWithNumSides:(int)numSides
 {
-    return [NSString stringWithFormat:@"SPRegularPolygon%dID", numSides];
+    return [NSNumber numberWithInt:numSides];
 }
 
 - (void)ensureExistenceOfRegularPolygonWithNumSides:(int)numSides
 {
-    NSString *key = [[self class] primitiveIDForRegularPolygonWithNumSides:numSides];
+    id key = [[self class] primitiveIDForRegularPolygonWithNumSides:numSides];
     SPStaticGeometry *geometry = [self primitiveForKey:key];
     if (!geometry)
     {

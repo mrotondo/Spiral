@@ -24,8 +24,35 @@
     unsigned int _count;
 
     NSArray *orderedPointsCache;
+    
+    GLuint strokeVBO;
 }
 @synthesize firstPoint = _firstPoint, lastPoint = _lastPoint;
+
+- (void)setColor:(GLKVector4)color
+{
+    [self resetCaches];
+    _color = color;
+}
+
+- (void)setLineWidth:(float)lineWidth
+{
+    [self resetCaches];
+    _lineWidth = lineWidth;
+}
+
+- (void)resetCaches
+{
+    orderedPointsCache = nil;
+
+    // reset stroke VBO
+    glDeleteBuffers(1, &strokeVBO);
+}
+
+- (void)createStrokeVBO
+{
+    // Generate vertex data for path
+}
 
 - (void)addPoint:(SPBezierPoint *)point
 {
@@ -37,7 +64,7 @@
     _lastPoint.nextUserPoint = point;
     _lastPoint = point;
     
-    orderedPointsCache = nil;
+    [self resetCaches];
 }
 
 - (void)addPointAt:(GLKVector2)position
@@ -51,7 +78,7 @@
     [self enumerateUserPointsWithBlock:^(SPBezierPoint *point, unsigned int i) {
         _count += [point bezierSubdivisionToNextPointWithSpacing:spacing];
     }];
-    orderedPointsCache = nil;
+    [self resetCaches];
 }
 
 - (unsigned int)count
@@ -106,18 +133,18 @@
     return orderedPoints;
 }
 
-- (void)strokeWithColor:(GLKVector4)color usingModelViewMatrix:(GLKMatrix4)modelViewMatrix andLineWidth:(float)lineWidth
+- (void)strokeUsingModelViewMatrix:(GLKMatrix4)modelViewMatrix
 {
     SPSingleColorEffect *effect = [SPSingleColorEffect sharedInstance];
     GLKMatrix4 originalModelViewMatrix = effect.transform.modelviewMatrix;
     effect.transform.modelviewMatrix = modelViewMatrix;
-    effect.color = color;
+    effect.color = self.color;
     
     int numVertices = [self count] * 2;
     GLKVector3 vertices[numVertices];
     
-    GLKVector3 aboveOffset = GLKVector3Make(0, lineWidth / 2.0, 0);
-    GLKVector3 belowOffset = GLKVector3Make(0, -lineWidth / 2.0, 0);
+    GLKVector3 aboveOffset = GLKVector3Make(0, self.lineWidth / 2.0, 0);
+    GLKVector3 belowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
     
     int i = 0;
     for (SPBezierPoint *point in [self orderedPoints])

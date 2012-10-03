@@ -144,7 +144,7 @@
     for (SPParticle *particle in particles)
     {
         GLKVector3 position = particle.position;
-        GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(-position.x, -position.y, -position.z);
+        GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(position.x, position.y, -position.z);
 #warning we only rotate around the z axis for now.
         modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, particle.angles.z, 0, 0, 1);
         GLKVector3 scales = particle.scales;
