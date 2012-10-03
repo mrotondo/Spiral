@@ -116,6 +116,9 @@
 
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.25, 0.25, 0.25, 1.0);
+    
+    GLKView *glView = (GLKView *)self.view;
+    glView.drawableMultisample = GLKViewDrawableMultisample4X;
 }
 
 - (void)tearDownGL
@@ -154,7 +157,7 @@
 {
     currentPath = [[SPBezierPath alloc] init];
     currentPath.color = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1);
-    currentPath.lineWidth = 0.1;
+    currentPath.lineWidth = 0.01;
     [paths addObject:currentPath];
 }
 

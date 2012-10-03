@@ -47,11 +47,35 @@
 
     // reset stroke VBO
     glDeleteBuffers(1, &strokeVBO);
+    strokeVBO = 0;
 }
 
 - (void)createStrokeVBO
 {
     // Generate vertex data for path
+    int numVertices = [self count] * 2;
+    size_t verticesSize = numVertices * sizeof(GLKVector3);
+    GLKVector3 vertices[numVertices];
+    
+    GLKVector3 aboveOffset = GLKVector3Make(0, self.lineWidth / 2.0, 0);
+    GLKVector3 belowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
+    
+    int i = 0;
+    for (SPBezierPoint *point in [self orderedPoints])
+    {
+        GLKVector3 pointPosition = GLKVector3Make(point.position.x, point.position.y, 0.0);
+        GLKMatrix4 rotation = GLKMatrix4MakeRotation(point.slope, 0, 0, 1);
+        GLKVector3 abovePoint = GLKVector3Add(pointPosition, GLKMatrix4MultiplyVector3(rotation, aboveOffset));
+        GLKVector3 belowPoint = GLKVector3Add(pointPosition, GLKMatrix4MultiplyVector3(rotation, belowOffset));
+        
+        vertices[i * 2 + 0] = abovePoint;
+        vertices[i * 2 + 1] = belowPoint;
+        i++;
+    }
+    
+    glGenBuffers(1, &strokeVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, strokeVBO);
+    glBufferData(GL_ARRAY_BUFFER, verticesSize, vertices, GL_STATIC_DRAW);
 }
 
 - (void)addPoint:(SPBezierPoint *)point
@@ -141,30 +165,20 @@
     effect.color = self.color;
     
     int numVertices = [self count] * 2;
-    GLKVector3 vertices[numVertices];
     
-    GLKVector3 aboveOffset = GLKVector3Make(0, self.lineWidth / 2.0, 0);
-    GLKVector3 belowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
-    
-    int i = 0;
-    for (SPBezierPoint *point in [self orderedPoints])
+    if (!strokeVBO)
     {
-        GLKVector3 pointPosition = GLKVector3Make(point.position.x, point.position.y, 0.0);
-        GLKMatrix4 rotation = GLKMatrix4MakeRotation(point.slope, 0, 0, 1);
-        GLKVector3 abovePoint = GLKVector3Add(pointPosition, GLKMatrix4MultiplyVector3(rotation, aboveOffset));
-        GLKVector3 belowPoint = GLKVector3Add(pointPosition, GLKMatrix4MultiplyVector3(rotation, belowOffset));
-        
-        vertices[i * 2 + 0] = abovePoint;
-        vertices[i * 2 + 1] = belowPoint;
-        i++;
+        [self createStrokeVBO];
     }
     
     [effect prepareToDraw];
     
+    glBindBuffer(GL_ARRAY_BUFFER, strokeVBO);
     glEnableVertexAttribArray(effect.positionVertexAttribute);
-    glVertexAttribPointer(effect.positionVertexAttribute, 3, GL_FLOAT, GL_FALSE, 0, vertices);
+    glVertexAttribPointer(effect.positionVertexAttribute, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, numVertices);
     glDisableVertexAttribArray(effect.positionVertexAttribute);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     
     effect.transform.modelviewMatrix = originalModelViewMatrix;
 }
