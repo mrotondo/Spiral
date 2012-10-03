@@ -145,8 +145,9 @@
     [[SPEffectsManager sharedEffectsManager] setModelViewMatrix:GLKMatrix4Identity];
     
     for (SDParticle *particle in particles) {
+        // Move the particles back and forth through the shapes in the center to demonstrate their softness
         particle.position = GLKVector3Add(particle.basePosition, GLKVector3Make(0, 0, 4.0 * sinf(particle.oscillationRate * totalTimeElapsed)));
-        particle.color = particle.baseColor; //GLKVector4MultiplyScalar(particle.baseColor, 0.5 * (1 + sinf(totalTimeElapsed)) );
+        particle.color = particle.baseColor;
         particle.scales = particle.baseScales;
     }
 }
@@ -157,6 +158,7 @@
     glEnable(GL_DEPTH_TEST);
     [self drawShapes];
     
+    // Temporarily turn off depth writing so that particles don't occlude each other
     glDepthMask(GL_FALSE);
     [self drawParticles];
     
@@ -165,6 +167,7 @@
 
 - (void)drawParticles
 {
+    // Draw particles onto the scene with additive blending for a glowy effect
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     [particleManager drawParticles:particles];
@@ -195,15 +198,12 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    glClearDepthf(1.0);
-//    glClearColor(1.0, 0.0, 0.0, 1.0);
+    // We need to use a non-white clear color with additive blending, or the particles won't show up because the color is already maxed out
     glClearColor(0.25, 0.25, 0.25, 1.0);
+    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    glBindVertexArrayOES(0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    
-    // Draw the shapes in the center to the depth texture
+    // Draw the rotating shapes to the depth texture
     [depthTarget drawToTargetWithBlock:^{
         glClearColor(1.0, 1.0, 1.0, 1.0);
         glClear(GL_DEPTH_BUFFER_BIT);
@@ -222,7 +222,7 @@
     // Draw the scene to the renderbuffer
     [self drawScene];
 
-//    // Draw a quad displaying the depth texture
+//    // Draw a quad displaying the depth texture for diagnostics
 //    glDisable(GL_DEPTH_TEST);
 //    GLKMatrix4 orthoMatrix = GLKMatrix4MakeOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
 //    [[SPEffectsManager sharedEffectsManager] setProjectionMatrix:orthoMatrix];

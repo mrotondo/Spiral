@@ -28,12 +28,23 @@
 		D5216A21158B1E04001CBFB7 /* SpiralDemo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = D5216A20158B1E04001CBFB7 /* SpiralDemo.entitlements */; };
 		D5216A24158B1E04001CBFB7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5216A22158B1E04001CBFB7 /* MainStoryboard_iPhone.storyboard */; };
 		D5216A27158B1E04001CBFB7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5216A25158B1E04001CBFB7 /* MainStoryboard_iPad.storyboard */; };
-		D5216A29158B1E04001CBFB7 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5216A28158B1E04001CBFB7 /* Shader.fsh */; };
-		D5216A2B158B1E04001CBFB7 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5216A2A158B1E04001CBFB7 /* Shader.vsh */; };
 		D5216A2E158B1E04001CBFB7 /* SDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5216A2D158B1E04001CBFB7 /* SDViewController.m */; };
 		D5216A43158B1E1F001CBFB7 /* libSpiral iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A3E158B1E14001CBFB7 /* libSpiral iOS.a */; };
 		D5216A46158B1E5F001CBFB7 /* SDParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = D5216A45158B1E5F001CBFB7 /* SDParticle.m */; };
 		D5216A48158B22D0001CBFB7 /* very_very_blurry_white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D5216A47158B22D0001CBFB7 /* very_very_blurry_white_circle.png */; };
+		D522DE5C161C189000DEBA6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A0A158B1E04001CBFB7 /* UIKit.framework */; };
+		D522DE5D161C189000DEBA6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A0C158B1E04001CBFB7 /* Foundation.framework */; };
+		D522DE5E161C189000DEBA6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A0E158B1E04001CBFB7 /* CoreGraphics.framework */; };
+		D522DE5F161C189000DEBA6A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A10158B1E04001CBFB7 /* GLKit.framework */; };
+		D522DE60161C189000DEBA6A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5216A12158B1E04001CBFB7 /* OpenGLES.framework */; };
+		D522DE66161C189000DEBA6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D522DE64161C189000DEBA6A /* InfoPlist.strings */; };
+		D522DE68161C189000DEBA6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D522DE67161C189000DEBA6A /* main.m */; };
+		D522DE6C161C189000DEBA6A /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D522DE6B161C189000DEBA6A /* DDAppDelegate.m */; };
+		D522DE6F161C189000DEBA6A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D522DE6D161C189000DEBA6A /* MainStoryboard_iPhone.storyboard */; };
+		D522DE72161C189000DEBA6A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D522DE70161C189000DEBA6A /* MainStoryboard_iPad.storyboard */; };
+		D522DE74161C189000DEBA6A /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D522DE73161C189000DEBA6A /* Shader.fsh */; };
+		D522DE76161C189000DEBA6A /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D522DE75161C189000DEBA6A /* Shader.vsh */; };
+		D522DE79161C189000DEBA6A /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D522DE78161C189000DEBA6A /* DDViewController.m */; };
 		D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A8161A639C00B8B7CF /* soft_particle.fsh */; };
 		D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A9161A639C00B8B7CF /* soft_particle.vsh */; };
 /* End PBXBuildFile section */
@@ -73,7 +84,7 @@
 		D51718EA158BA95F00EC9AA8 /* single_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = single_color.vsh; path = ../Shaders/single_color.vsh; sourceTree = "<group>"; };
 		D51718EB158BA95F00EC9AA8 /* texture_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = texture_only.fsh; path = ../Shaders/texture_only.fsh; sourceTree = "<group>"; };
 		D51718EC158BA95F00EC9AA8 /* texture_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = texture_only.vsh; path = ../Shaders/texture_only.vsh; sourceTree = "<group>"; };
-		D5216A06158B1E04001CBFB7 /* SpiralDemo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpiralDemo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5216A06158B1E04001CBFB7 /* ParticleDemo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParticleDemo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5216A0A158B1E04001CBFB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D5216A0C158B1E04001CBFB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5216A0E158B1E04001CBFB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,14 +99,25 @@
 		D5216A20158B1E04001CBFB7 /* SpiralDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpiralDemo.entitlements; sourceTree = "<group>"; };
 		D5216A23158B1E04001CBFB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		D5216A26158B1E04001CBFB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		D5216A28158B1E04001CBFB7 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		D5216A2A158B1E04001CBFB7 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		D5216A2C158B1E04001CBFB7 /* SDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDViewController.h; sourceTree = "<group>"; };
 		D5216A2D158B1E04001CBFB7 /* SDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDViewController.m; sourceTree = "<group>"; };
 		D5216A34158B1E14001CBFB7 /* Spiral.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Spiral.xcodeproj; path = ../Spiral/Spiral.xcodeproj; sourceTree = "<group>"; };
 		D5216A44158B1E5F001CBFB7 /* SDParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDParticle.h; sourceTree = "<group>"; };
 		D5216A45158B1E5F001CBFB7 /* SDParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDParticle.m; sourceTree = "<group>"; };
 		D5216A47158B22D0001CBFB7 /* very_very_blurry_white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = very_very_blurry_white_circle.png; sourceTree = "<group>"; };
+		D522DE5A161C189000DEBA6A /* DrawDemo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DrawDemo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D522DE63161C189000DEBA6A /* DrawDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawDemo-Info.plist"; sourceTree = "<group>"; };
+		D522DE65161C189000DEBA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D522DE67161C189000DEBA6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D522DE69161C189000DEBA6A /* DrawDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawDemo-Prefix.pch"; sourceTree = "<group>"; };
+		D522DE6A161C189000DEBA6A /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
+		D522DE6B161C189000DEBA6A /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
+		D522DE6E161C189000DEBA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		D522DE71161C189000DEBA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		D522DE73161C189000DEBA6A /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		D522DE75161C189000DEBA6A /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		D522DE77161C189000DEBA6A /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
+		D522DE78161C189000DEBA6A /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
 		D59B26A8161A639C00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.fsh; path = ../Shaders/soft_particle.fsh; sourceTree = "<group>"; };
 		D59B26A9161A639C00B8B7CF /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.vsh; path = ../Shaders/soft_particle.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +133,18 @@
 				D5216A0F158B1E04001CBFB7 /* CoreGraphics.framework in Frameworks */,
 				D5216A11158B1E04001CBFB7 /* GLKit.framework in Frameworks */,
 				D5216A13158B1E04001CBFB7 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D522DE57161C189000DEBA6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D522DE5C161C189000DEBA6A /* UIKit.framework in Frameworks */,
+				D522DE5D161C189000DEBA6A /* Foundation.framework in Frameworks */,
+				D522DE5E161C189000DEBA6A /* CoreGraphics.framework in Frameworks */,
+				D522DE5F161C189000DEBA6A /* GLKit.framework in Frameworks */,
+				D522DE60161C189000DEBA6A /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +185,8 @@
 			children = (
 				D5216A34158B1E14001CBFB7 /* Spiral.xcodeproj */,
 				D51718E1158BA95F00EC9AA8 /* Spiral Bundle */,
-				D5216A14158B1E04001CBFB7 /* SpiralDemo */,
+				D5216A14158B1E04001CBFB7 /* ParticleDemo */,
+				D522DE61161C189000DEBA6A /* DrawDemo */,
 				D5216A09158B1E04001CBFB7 /* Frameworks */,
 				D5216A07158B1E04001CBFB7 /* Products */,
 			);
@@ -160,7 +195,8 @@
 		D5216A07158B1E04001CBFB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5216A06158B1E04001CBFB7 /* SpiralDemo iOS.app */,
+				D5216A06158B1E04001CBFB7 /* ParticleDemo iOS.app */,
+				D522DE5A161C189000DEBA6A /* DrawDemo iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,7 +213,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5216A14158B1E04001CBFB7 /* SpiralDemo */ = {
+		D5216A14158B1E04001CBFB7 /* ParticleDemo */ = {
 			isa = PBXGroup;
 			children = (
 				D5216A47158B22D0001CBFB7 /* very_very_blurry_white_circle.png */,
@@ -185,14 +221,13 @@
 				D5216A1E158B1E04001CBFB7 /* SDAppDelegate.m */,
 				D5216A22158B1E04001CBFB7 /* MainStoryboard_iPhone.storyboard */,
 				D5216A25158B1E04001CBFB7 /* MainStoryboard_iPad.storyboard */,
-				D5216A28158B1E04001CBFB7 /* Shader.fsh */,
-				D5216A2A158B1E04001CBFB7 /* Shader.vsh */,
 				D5216A2C158B1E04001CBFB7 /* SDViewController.h */,
 				D5216A2D158B1E04001CBFB7 /* SDViewController.m */,
 				D5216A15158B1E04001CBFB7 /* Supporting Files */,
 				D5216A44158B1E5F001CBFB7 /* SDParticle.h */,
 				D5216A45158B1E5F001CBFB7 /* SDParticle.m */,
 			);
+			name = ParticleDemo;
 			path = SpiralDemo;
 			sourceTree = "<group>";
 		};
@@ -218,12 +253,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D522DE61161C189000DEBA6A /* DrawDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D522DE6A161C189000DEBA6A /* DDAppDelegate.h */,
+				D522DE6B161C189000DEBA6A /* DDAppDelegate.m */,
+				D522DE6D161C189000DEBA6A /* MainStoryboard_iPhone.storyboard */,
+				D522DE70161C189000DEBA6A /* MainStoryboard_iPad.storyboard */,
+				D522DE73161C189000DEBA6A /* Shader.fsh */,
+				D522DE75161C189000DEBA6A /* Shader.vsh */,
+				D522DE77161C189000DEBA6A /* DDViewController.h */,
+				D522DE78161C189000DEBA6A /* DDViewController.m */,
+				D522DE62161C189000DEBA6A /* Supporting Files */,
+			);
+			path = DrawDemo;
+			sourceTree = "<group>";
+		};
+		D522DE62161C189000DEBA6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D522DE63161C189000DEBA6A /* DrawDemo-Info.plist */,
+				D522DE64161C189000DEBA6A /* InfoPlist.strings */,
+				D522DE67161C189000DEBA6A /* main.m */,
+				D522DE69161C189000DEBA6A /* DrawDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D5216A05158B1E04001CBFB7 /* SpiralDemo iOS */ = {
+		D5216A05158B1E04001CBFB7 /* ParticleDemo iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5216A31158B1E04001CBFB7 /* Build configuration list for PBXNativeTarget "SpiralDemo iOS" */;
+			buildConfigurationList = D5216A31158B1E04001CBFB7 /* Build configuration list for PBXNativeTarget "ParticleDemo iOS" */;
 			buildPhases = (
 				D5216A02158B1E04001CBFB7 /* Sources */,
 				D5216A03158B1E04001CBFB7 /* Frameworks */,
@@ -233,9 +295,26 @@
 			);
 			dependencies = (
 			);
-			name = "SpiralDemo iOS";
+			name = "ParticleDemo iOS";
 			productName = SpiralDemo;
-			productReference = D5216A06158B1E04001CBFB7 /* SpiralDemo iOS.app */;
+			productReference = D5216A06158B1E04001CBFB7 /* ParticleDemo iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D522DE59161C189000DEBA6A /* DrawDemo iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D522DE7A161C189000DEBA6A /* Build configuration list for PBXNativeTarget "DrawDemo iOS" */;
+			buildPhases = (
+				D522DE56161C189000DEBA6A /* Sources */,
+				D522DE57161C189000DEBA6A /* Frameworks */,
+				D522DE58161C189000DEBA6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DrawDemo iOS";
+			productName = DrawDemo;
+			productReference = D522DE5A161C189000DEBA6A /* DrawDemo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +345,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				D5216A05158B1E04001CBFB7 /* SpiralDemo iOS */,
+				D5216A05158B1E04001CBFB7 /* ParticleDemo iOS */,
+				D522DE59161C189000DEBA6A /* DrawDemo iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -304,8 +384,6 @@
 				D5216A21158B1E04001CBFB7 /* SpiralDemo.entitlements in Resources */,
 				D5216A24158B1E04001CBFB7 /* MainStoryboard_iPhone.storyboard in Resources */,
 				D5216A27158B1E04001CBFB7 /* MainStoryboard_iPad.storyboard in Resources */,
-				D5216A29158B1E04001CBFB7 /* Shader.fsh in Resources */,
-				D5216A2B158B1E04001CBFB7 /* Shader.vsh in Resources */,
 				D5216A48158B22D0001CBFB7 /* very_very_blurry_white_circle.png in Resources */,
 				D51718F7158BA97100EC9AA8 /* color_only.fsh in Resources */,
 				D51718F8158BA97400EC9AA8 /* color_only.vsh in Resources */,
@@ -322,6 +400,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D522DE58161C189000DEBA6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D522DE66161C189000DEBA6A /* InfoPlist.strings in Resources */,
+				D522DE6F161C189000DEBA6A /* MainStoryboard_iPhone.storyboard in Resources */,
+				D522DE72161C189000DEBA6A /* MainStoryboard_iPad.storyboard in Resources */,
+				D522DE74161C189000DEBA6A /* Shader.fsh in Resources */,
+				D522DE76161C189000DEBA6A /* Shader.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -333,6 +423,16 @@
 				D5216A1F158B1E04001CBFB7 /* SDAppDelegate.m in Sources */,
 				D5216A2E158B1E04001CBFB7 /* SDViewController.m in Sources */,
 				D5216A46158B1E5F001CBFB7 /* SDParticle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D522DE56161C189000DEBA6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D522DE68161C189000DEBA6A /* main.m in Sources */,
+				D522DE6C161C189000DEBA6A /* DDAppDelegate.m in Sources */,
+				D522DE79161C189000DEBA6A /* DDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +459,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				D5216A26158B1E04001CBFB7 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		D522DE64161C189000DEBA6A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D522DE65161C189000DEBA6A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D522DE6D161C189000DEBA6A /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D522DE6E161C189000DEBA6A /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		D522DE70161C189000DEBA6A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D522DE71161C189000DEBA6A /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -443,6 +567,34 @@
 			};
 			name = Release;
 		};
+		D522DE7B161C189000DEBA6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawDemo/DrawDemo-Prefix.pch";
+				INFOPLIST_FILE = "DrawDemo/DrawDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D522DE7C161C189000DEBA6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawDemo/DrawDemo-Prefix.pch";
+				INFOPLIST_FILE = "DrawDemo/DrawDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,11 +607,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5216A31158B1E04001CBFB7 /* Build configuration list for PBXNativeTarget "SpiralDemo iOS" */ = {
+		D5216A31158B1E04001CBFB7 /* Build configuration list for PBXNativeTarget "ParticleDemo iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5216A32158B1E04001CBFB7 /* Debug */,
 				D5216A33158B1E04001CBFB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D522DE7A161C189000DEBA6A /* Build configuration list for PBXNativeTarget "DrawDemo iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D522DE7B161C189000DEBA6A /* Debug */,
+				D522DE7C161C189000DEBA6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

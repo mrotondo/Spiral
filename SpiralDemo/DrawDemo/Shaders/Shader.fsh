@@ -1,8 +1,8 @@
 //
 //  Shader.fsh
-//  SpiralDemo
+//  DrawDemo
 //
-//  Created by Mike Rotondo on 6/15/12.
+//  Created by Mike Rotondo on 10/2/12.
 //  Copyright (c) 2012 Tree. All rights reserved.
 //
 
