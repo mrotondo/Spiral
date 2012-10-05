@@ -89,6 +89,13 @@
 		D58B372515836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372615836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372715836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
+		D592D65E161C52EF00C753A4 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D65C161C52EF00C753A4 /* blur.fsh */; };
+		D592D65F161C52EF00C753A4 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D65D161C52EF00C753A4 /* blur.vsh */; };
+		D592D663161C533A00C753A4 /* SPBlurEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D592D661161C533A00C753A4 /* SPBlurEffect.h */; };
+		D592D664161C533A00C753A4 /* SPBlurEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D592D661161C533A00C753A4 /* SPBlurEffect.h */; };
+		D592D665161C533A00C753A4 /* SPBlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D592D662161C533A00C753A4 /* SPBlurEffect.m */; };
+		D592D666161C533A00C753A4 /* SPBlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D592D662161C533A00C753A4 /* SPBlurEffect.m */; };
+		D592D667161C533A00C753A4 /* SPBlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D592D662161C533A00C753A4 /* SPBlurEffect.m */; };
 		D59B26A2161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
 		D59B26A3161A638A00B8B7CF /* soft_particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B269F161A638A00B8B7CF /* soft_particle.fsh */; };
 		D59B26A5161A638A00B8B7CF /* soft_particle.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D59B26A0161A638A00B8B7CF /* soft_particle.vsh */; };
@@ -190,6 +197,10 @@
 		D58B370A15836A5300A18668 /* SPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAnimation.m; sourceTree = "<group>"; };
 		D58B370B15836A5300A18668 /* SPParticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParticleManager.h; sourceTree = "<group>"; };
 		D58B370C15836A5300A18668 /* SPParticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPParticleManager.m; sourceTree = "<group>"; };
+		D592D65C161C52EF00C753A4 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
+		D592D65D161C52EF00C753A4 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
+		D592D661161C533A00C753A4 /* SPBlurEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBlurEffect.h; sourceTree = "<group>"; };
+		D592D662161C533A00C753A4 /* SPBlurEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBlurEffect.m; sourceTree = "<group>"; };
 		D59B269F161A638A00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.fsh; path = Shaders/soft_particle.fsh; sourceTree = SOURCE_ROOT; };
 		D59B26A0161A638A00B8B7CF /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.vsh; path = Shaders/soft_particle.vsh; sourceTree = SOURCE_ROOT; };
 		D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSoftParticleEffect.m; sourceTree = "<group>"; };
@@ -267,6 +278,8 @@
 				D55E1F63158379F0006E74B8 /* single_color.vsh */,
 				D55E1F64158379F0006E74B8 /* texture_only.fsh */,
 				D55E1F65158379F0006E74B8 /* texture_only.vsh */,
+				D592D65C161C52EF00C753A4 /* blur.fsh */,
+				D592D65D161C52EF00C753A4 /* blur.vsh */,
 			);
 			name = Shaders;
 			path = Spiral;
@@ -299,6 +312,8 @@
 				D58B36F015836A3000A18668 /* SPParticleEffect.m */,
 				D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */,
 				D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */,
+				D592D661161C533A00C753A4 /* SPBlurEffect.h */,
+				D592D662161C533A00C753A4 /* SPBlurEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -444,6 +459,7 @@
 				D58B371E15836A5300A18668 /* SPAnimation.h in Headers */,
 				D58B372315836A5300A18668 /* SPParticleManager.h in Headers */,
 				D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
+				D592D663161C533A00C753A4 /* SPBlurEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +489,7 @@
 				D58B371F15836A5300A18668 /* SPAnimation.h in Headers */,
 				D58B372415836A5300A18668 /* SPParticleManager.h in Headers */,
 				D59B26B2161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
+				D592D664161C533A00C753A4 /* SPBlurEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +583,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E1EDB9158365AC00DBE86E /* InfoPlist.strings in Resources */,
+				D592D65E161C52EF00C753A4 /* blur.fsh in Resources */,
+				D592D65F161C52EF00C753A4 /* blur.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +633,7 @@
 				D58B372015836A5300A18668 /* SPAnimation.m in Sources */,
 				D58B372515836A5300A18668 /* SPParticleManager.m in Sources */,
 				D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
+				D592D665161C533A00C753A4 /* SPBlurEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +675,7 @@
 				D59B26A2161A638A00B8B7CF /* soft_particle.fsh in Sources */,
 				D59B26A5161A638A00B8B7CF /* soft_particle.vsh in Sources */,
 				D59B26AF161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
+				D592D666161C533A00C753A4 /* SPBlurEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +707,7 @@
 				D59B26A3161A638A00B8B7CF /* soft_particle.fsh in Sources */,
 				D59B26A6161A638A00B8B7CF /* soft_particle.vsh in Sources */,
 				D59B26B0161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
+				D592D667161C533A00C753A4 /* SPBlurEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

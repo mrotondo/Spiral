@@ -56,6 +56,10 @@
 		D560230B161C1F9300D2FF9E /* single_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EA158BA95F00EC9AA8 /* single_color.vsh */; };
 		D560230C161C1F9300D2FF9E /* texture_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EB158BA95F00EC9AA8 /* texture_only.fsh */; };
 		D560230D161C1F9300D2FF9E /* texture_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D51718EC158BA95F00EC9AA8 /* texture_only.vsh */; };
+		D592D658161C52DA00C753A4 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D656161C52DA00C753A4 /* blur.fsh */; };
+		D592D659161C52DA00C753A4 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D656161C52DA00C753A4 /* blur.fsh */; };
+		D592D65A161C52DA00C753A4 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D657161C52DA00C753A4 /* blur.vsh */; };
+		D592D65B161C52DA00C753A4 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D657161C52DA00C753A4 /* blur.vsh */; };
 		D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A8161A639C00B8B7CF /* soft_particle.fsh */; };
 		D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D59B26A9161A639C00B8B7CF /* soft_particle.vsh */; };
 /* End PBXBuildFile section */
@@ -127,6 +131,8 @@
 		D522DE71161C189000DEBA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D522DE77161C189000DEBA6A /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
 		D522DE78161C189000DEBA6A /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
+		D592D656161C52DA00C753A4 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
+		D592D657161C52DA00C753A4 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
 		D59B26A8161A639C00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.fsh; path = ../Shaders/soft_particle.fsh; sourceTree = "<group>"; };
 		D59B26A9161A639C00B8B7CF /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.vsh; path = ../Shaders/soft_particle.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +191,8 @@
 				D51718EA158BA95F00EC9AA8 /* single_color.vsh */,
 				D51718EB158BA95F00EC9AA8 /* texture_only.fsh */,
 				D51718EC158BA95F00EC9AA8 /* texture_only.vsh */,
+				D592D656161C52DA00C753A4 /* blur.fsh */,
+				D592D657161C52DA00C753A4 /* blur.vsh */,
 			);
 			name = Shaders;
 			path = Spiral;
@@ -405,6 +413,8 @@
 				D5171900158BA99C00EC9AA8 /* texture_only.vsh in Resources */,
 				D59B26AA161A639C00B8B7CF /* soft_particle.fsh in Resources */,
 				D59B26AB161A639C00B8B7CF /* soft_particle.vsh in Resources */,
+				D592D658161C52DA00C753A4 /* blur.fsh in Resources */,
+				D592D65A161C52DA00C753A4 /* blur.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +437,8 @@
 				D522DE66161C189000DEBA6A /* InfoPlist.strings in Resources */,
 				D522DE6F161C189000DEBA6A /* MainStoryboard_iPhone.storyboard in Resources */,
 				D522DE72161C189000DEBA6A /* MainStoryboard_iPad.storyboard in Resources */,
+				D592D659161C52DA00C753A4 /* blur.fsh in Resources */,
+				D592D65B161C52DA00C753A4 /* blur.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

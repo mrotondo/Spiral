@@ -36,8 +36,8 @@
         glBindTexture(GL_TEXTURE_2D, texture);
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         GetGLError();
         
         if (!depthOnly)
@@ -45,17 +45,31 @@
             // create the depth render buffer
             GLuint depthRenderbuffer;
             glGenRenderbuffers(1, &depthRenderbuffer);
-            glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
-            glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT32_OES, textureSize.x, textureSize.y);
             
+            GetGLError();
+            
+            glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
+
+            GetGLError();
+            
+            glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16_OES, textureSize.x, textureSize.y);
+            
+            GetGLError();
+
             // specify the texture as a color format
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,  textureSize.x, textureSize.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
             
+            GetGLError();
+
             // attach the texture to the fbo
             glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
             
+            GetGLError();
+
             // attach the depth buffer to the fbo
             glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
+
+            GetGLError();
         }
         else
         {
@@ -76,6 +90,10 @@
         GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
         if(status != GL_FRAMEBUFFER_COMPLETE) {
             NSLog(@"failed to make complete framebuffer object %x", status);
+        }
+        else
+        {
+            NSLog(@"Created a framebuffer object with name: %d", framebuffer);
         }
         
         glBindFramebuffer(GL_FRAMEBUFFER, 0);

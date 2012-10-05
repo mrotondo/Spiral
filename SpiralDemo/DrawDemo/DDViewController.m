@@ -11,6 +11,8 @@
 #import "SPEffectsManager.h"
 #import "SPGeometricPrimitives.h"
 #import "SPBezierPath.h"
+#import "SPBlurEffect.h"
+#import "SPOffscreenRenderTarget.h"
 
 @interface DDTouchShape : NSObject
 
@@ -46,7 +48,6 @@
 
 @implementation DDViewController
 {
-    NSMutableArray *shapes;
     NSMutableArray *paths;
     SPBezierPath *currentPath;
     
@@ -56,8 +57,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    shapes = [NSMutableArray array];
     
     paths = [NSMutableArray array];
     [self startNewPath];
@@ -74,7 +73,7 @@
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
-    self.preferredFramesPerSecond = 60;
+    self.preferredFramesPerSecond = 30;
     
     [self setupGL];
 }
@@ -114,11 +113,10 @@
     
     [SPGeometricPrimitives initializeSharedGeometricPrimitives];
 
-    glEnable(GL_DEPTH_TEST);
-    glClearColor(0.25, 0.25, 0.25, 1.0);
+//    glEnable(GL_DEPTH_TEST);
     
-    GLKView *glView = (GLKView *)self.view;
-    glView.drawableMultisample = GLKViewDrawableMultisample4X;
+//    GLKView *glView = (GLKView *)self.view;
+//    glView.drawableMultisample = GLKViewDrawableMultisample4X;
 }
 
 - (void)tearDownGL
@@ -157,7 +155,7 @@
 {
     currentPath = [[SPBezierPath alloc] init];
     currentPath.color = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1);
-    currentPath.lineWidth = 0.01;
+    currentPath.lineWidth = 0.02;
     [paths addObject:currentPath];
 }
 
@@ -166,9 +164,10 @@
     CGPoint touchLocationCGPoint = [touch locationInView:self.view];
     GLKVector2 touchLocation = GLKVector2Make(touchLocationCGPoint.x, touchLocationCGPoint.y);
     GLKVector2 lowerLeftOriginTouchLocation = GLKVector2Make(touchLocation.x, self.view.bounds.size.height - touchLocation.y);
+    GLKVector2 lowerLeftOriginTouchLocationInOpenGLPixels = GLKVector2MultiplyScalar(lowerLeftOriginTouchLocation, self.view.contentScaleFactor);
     
     float z = (arc4random() / (float)0x100000000);
-    GLKVector3 windowLocationWithZ = GLKVector3Make(lowerLeftOriginTouchLocation.x, lowerLeftOriginTouchLocation.y, z);
+    GLKVector3 windowLocationWithZ = GLKVector3Make(lowerLeftOriginTouchLocationInOpenGLPixels.x, lowerLeftOriginTouchLocationInOpenGLPixels.y, z);
     
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
@@ -183,10 +182,6 @@
     
     // Why does GLKMathUnproject give me back a point with z between -nearPlane and -farPlane???
     GLKVector3 worldSpaceLocationWithCorrectedZ = GLKVector3Multiply(worldSpaceLocation, GLKVector3Make(1, 1, -1));
-    
-    DDTouchShape *shape = [DDTouchShape shapeWithLocation:worldSpaceLocationWithCorrectedZ andColor:[SPGLKitHelper randomGLKVector3] andNumSides:10 * (arc4random() / (float)0x100000000)];
-    
-    [shapes addObject:shape];
     
     [currentPath addPointAt:GLKVector2MakeWithArray(worldSpaceLocation.v)];
 }
@@ -209,6 +204,7 @@
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // Draw the scene to the renderbuffer
@@ -217,34 +213,25 @@
 
 - (void)drawScene
 {
-//    [self drawShapes];
+    SPBlurEffect *effect = [SPBlurEffect sharedInstance];
+    effect.amount = 10;
+    effect.scale = 1;
+    effect.strength = 1;
+    
     [self drawPaths];
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_ONE, GL_ONE);
+    [[SPBlurEffect sharedInstance] drawBlurredBlock:^{
+        [self drawPaths];
+    }];
+    glDisable(GL_BLEND);
 }
 
 - (void)drawPaths
 {
     for (SPBezierPath *path in [paths reverseObjectEnumerator]) {
         [path strokeUsingModelViewMatrix:[SPEffectsManager sharedEffectsManager].modelViewMatrix];
-    }
-}
-
-- (void)drawShapes
-{
-    for (DDTouchShape *shape in shapes)
-    {
-        GLKVector4 location = GLKVector4MakeWithVector3(shape.location, 1);
-        location.z *= -1; // For translating the world correctly (as opposed to translating the point) (I'm confused about why I need to do this, see above comment after unprojecting)
-        
-        GLKMatrix4 shapeTransform = GLKMatrix4Identity;
-        shapeTransform = GLKMatrix4TranslateWithVector4(shapeTransform, location);
-        shapeTransform = GLKMatrix4Scale(shapeTransform, 0.1, 0.1, 1.0);
-        
-        [SPGeometricPrimitives drawRegularPolygonWithNumSides:shape.numSides
-                                                    withColor:GLKVector4MakeWithVector3(shape.color, 1.0)
-                                           andModelViewMatrix:shapeTransform];
-
-//        [SPGeometricPrimitives drawQuadWithColor:GLKVector4MakeWithVector3(shape.color, 1.0)
-//                              andModelViewMatrix:shapeTransform];
     }
 }
 
