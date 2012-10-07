@@ -16,6 +16,8 @@
 
 @interface SPBezierPoint : NSObject 
 
+@property (nonatomic) BOOL isUserPoint;
+
 @property (nonatomic, strong) SPBezierPoint *nextPoint;
 @property (nonatomic, weak) SPBezierPoint *prevPoint;
 
@@ -27,6 +29,8 @@
 @property (nonatomic, readonly) GLKVector2 position;
 @property (nonatomic, readonly) float distanceToPrevPoint;
 @property (nonatomic, readonly) float distanceToNextPoint;
+@property (nonatomic, readonly) float distanceToPrevUserPoint;
+@property (nonatomic, readonly) float distanceToNextUserPoint;
 @property (nonatomic, readonly) float slope;
 @property (nonatomic, readonly) GLKVector2 tangent;
 @property (nonatomic, readonly) GLKVector2 normal; // left-pointing

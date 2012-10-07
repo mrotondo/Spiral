@@ -57,12 +57,26 @@
     size_t verticesSize = numVertices * sizeof(GLKVector3);
     GLKVector3 vertices[numVertices];
     
-    GLKVector3 aboveOffset = GLKVector3Make(0, self.lineWidth / 2.0, 0);
-    GLKVector3 belowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
+    GLKVector3 baseAboveOffset = GLKVector3Make(0, self.lineWidth / 2.0, 0);
+    GLKVector3 baseBelowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
+
+    float widthScalingFactor = 1.0;
+    float widthScalingFactorSmoothness = 0.99;
+    float widthScalingFactorTarget = 1.0;
     
     int i = 0;
     for (SPBezierPoint *point in [self orderedPoints])
     {
+        if ( point.isUserPoint )
+        {
+            widthScalingFactorTarget = 1 + (/* 1 - */ MAX(0, MIN(20, point.distanceToNextUserPoint / 0.01)));
+//            NSLog(@"distance to next user point: %f, width scaling factor target: %f", point.distanceToNextUserPoint, widthScalingFactorTarget);
+        }
+        widthScalingFactor = widthScalingFactorSmoothness * widthScalingFactor + (1.0 - widthScalingFactorSmoothness) * widthScalingFactorTarget;
+        
+        GLKVector3 aboveOffset = GLKVector3MultiplyScalar(baseAboveOffset, widthScalingFactor);
+        GLKVector3 belowOffset = GLKVector3MultiplyScalar(baseBelowOffset, widthScalingFactor);
+        
         GLKVector3 pointPosition = GLKVector3Make(point.position.x, point.position.y, 0.0);
         GLKMatrix4 rotation = GLKMatrix4MakeRotation(point.slope, 0, 0, 1);
         GLKVector3 abovePoint = GLKVector3Add(pointPosition, GLKMatrix4MultiplyVector3(rotation, aboveOffset));
@@ -93,7 +107,9 @@
 
 - (void)addPointAt:(GLKVector2)position
 {
-    [self addPoint:[[SPBezierPoint alloc] initWithPosition:position]];
+    SPBezierPoint *newPoint = [[SPBezierPoint alloc] initWithPosition:position];
+    newPoint.isUserPoint = YES;
+    [self addPoint:newPoint];
     ++_count;
 }
 

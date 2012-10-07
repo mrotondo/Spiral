@@ -115,8 +115,8 @@
 
 //    glEnable(GL_DEPTH_TEST);
     
-//    GLKView *glView = (GLKView *)self.view;
-//    glView.drawableMultisample = GLKViewDrawableMultisample4X;
+    GLKView *glView = (GLKView *)self.view;
+    glView.drawableMultisample = GLKViewDrawableMultisample4X;
 }
 
 - (void)tearDownGL
@@ -147,7 +147,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [currentPath interpolateWithMinimumSpacing:0.01];
+    [currentPath interpolateWithMinimumSpacing:0.001];
     [self startNewPath];
 }
 
@@ -155,7 +155,7 @@
 {
     currentPath = [[SPBezierPath alloc] init];
     currentPath.color = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1);
-    currentPath.lineWidth = 0.02;
+    currentPath.lineWidth = 0.004;
     [paths addObject:currentPath];
 }
 
@@ -213,19 +213,18 @@
 
 - (void)drawScene
 {
-    SPBlurEffect *effect = [SPBlurEffect sharedInstance];
-    effect.amount = 10;
-    effect.scale = 1;
-    effect.strength = 1;
-    
     [self drawPaths];
 
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_ONE, GL_ONE);
-    [[SPBlurEffect sharedInstance] drawBlurredBlock:^{
-        [self drawPaths];
-    }];
-    glDisable(GL_BLEND);
+//    SPBlurEffect *effect = [SPBlurEffect sharedInstance];
+//    effect.amount = 10;
+//    effect.scale = 1;
+//    effect.strength = 1;
+//    glEnable(GL_BLEND);
+//    glBlendFunc(GL_ONE, GL_ONE);
+//    [[SPBlurEffect sharedInstance] drawBlurredBlock:^{
+//        [self drawPaths];
+//    }];
+//    glDisable(GL_BLEND);
 }
 
 - (void)drawPaths

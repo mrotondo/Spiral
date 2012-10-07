@@ -26,6 +26,7 @@
     self = [super init];
     if (self) {
         _position = position;
+        self.isUserPoint = NO;
     }
     return self;
 }
@@ -69,6 +70,22 @@
 {
     if (self.nextPoint)
         return [self distanceToPoint:self.nextPoint];
+    else
+        return 0.0f;
+}
+
+- (float)distanceToPrevUserPoint
+{
+    if (self.prevUserPoint)
+        return [self distanceToPoint:self.prevUserPoint];
+    else
+        return 0.0f;
+}
+
+- (float)distanceToNextUserPoint
+{
+    if (self.nextUserPoint)
+        return [self distanceToPoint:self.nextUserPoint];
     else
         return 0.0f;
 }
@@ -147,6 +164,8 @@
         GLKVector2Length(GLKVector2Subtract(newPoint, d)) > spacing)
     {
         SPBezierPoint *newPathPoint = [[SPBezierPoint alloc] initWithPosition:newPoint];
+        newPathPoint.isUserPoint = NO;
+        
         SPBezierPoint *oldNextPoint = self.nextPoint;
         self.nextPoint = newPathPoint;
         newPathPoint.nextPoint = oldNextPoint;
