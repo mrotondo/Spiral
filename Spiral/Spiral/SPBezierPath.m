@@ -61,18 +61,18 @@
     GLKVector3 baseBelowOffset = GLKVector3Make(0, -self.lineWidth / 2.0, 0);
 
     float widthScalingFactor = 1.0;
-    float widthScalingFactorSmoothness = 0.99;
-    float widthScalingFactorTarget = 1.0;
+//    float widthScalingFactorSmoothness = 0.99;
+//    float widthScalingFactorTarget = 1.0;
     
     int i = 0;
     for (SPBezierPoint *point in [self orderedPoints])
     {
-        if ( point.isUserPoint )
-        {
-            widthScalingFactorTarget = 1 + (/* 1 - */ MAX(0, MIN(20, point.distanceToNextUserPoint / 0.01)));
-//            NSLog(@"distance to next user point: %f, width scaling factor target: %f", point.distanceToNextUserPoint, widthScalingFactorTarget);
-        }
-        widthScalingFactor = widthScalingFactorSmoothness * widthScalingFactor + (1.0 - widthScalingFactorSmoothness) * widthScalingFactorTarget;
+//        if ( point.isUserPoint )
+//        {
+//            widthScalingFactorTarget = 1 + (/* 1 - */ MAX(0, MIN(20, point.distanceToNextUserPoint / 0.01)));
+////            NSLog(@"distance to next user point: %f, width scaling factor target: %f", point.distanceToNextUserPoint, widthScalingFactorTarget);
+//        }
+//        widthScalingFactor = widthScalingFactorSmoothness * widthScalingFactor + (1.0 - widthScalingFactorSmoothness) * widthScalingFactorTarget;
         
         GLKVector3 aboveOffset = GLKVector3MultiplyScalar(baseAboveOffset, widthScalingFactor);
         GLKVector3 belowOffset = GLKVector3MultiplyScalar(baseBelowOffset, widthScalingFactor);

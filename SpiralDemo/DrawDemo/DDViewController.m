@@ -155,7 +155,8 @@
 {
     currentPath = [[SPBezierPath alloc] init];
     currentPath.color = GLKVector4MakeWithVector3([SPGLKitHelper randomGLKVector3], 1);
-    currentPath.lineWidth = 0.004;
+//    currentPath.lineWidth = 0.004;
+    currentPath.lineWidth = 0.4;
     [paths addObject:currentPath];
 }
 
@@ -192,11 +193,11 @@
 {
     totalTimeElapsed += self.timeSinceLastUpdate;
     
-//    float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
+    float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
 //    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 1.0f, 10.0f);
 //    [[SPEffectsManager sharedEffectsManager] setProjectionMatrix:perspectiveMatrix];
-    
-    GLKMatrix4 orthoMatrix = GLKMatrix4MakeOrtho(-1, 1, -1, 1, -1, 1);
+
+    GLKMatrix4 orthoMatrix = GLKMatrix4MakeOrtho(-aspect, aspect, -1, 1, -1, 1);
     [[SPEffectsManager sharedEffectsManager] setProjectionMatrix:orthoMatrix];
     
     [[SPEffectsManager sharedEffectsManager] setModelViewMatrix:GLKMatrix4Identity];
@@ -229,7 +230,7 @@
 
 - (void)drawPaths
 {
-    for (SPBezierPath *path in [paths reverseObjectEnumerator]) {
+    for (SPBezierPath *path in paths) {
         [path strokeUsingModelViewMatrix:[SPEffectsManager sharedEffectsManager].modelViewMatrix];
     }
 }
