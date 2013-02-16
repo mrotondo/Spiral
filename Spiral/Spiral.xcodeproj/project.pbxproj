@@ -27,71 +27,71 @@
 		D58B36C7158369FE00A18668 /* ShaderProgramLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36BF158369FE00A18668 /* ShaderProgramLoader.m */; };
 		D58B36C8158369FE00A18668 /* ShaderProgramLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36BF158369FE00A18668 /* ShaderProgramLoader.m */; };
 		D58B36C9158369FE00A18668 /* ShaderProgramLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36BF158369FE00A18668 /* ShaderProgramLoader.m */; };
-		D58B36CE15836A1300A18668 /* SPEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36CA15836A1300A18668 /* SPEffect.h */; };
+		D58B36CE15836A1300A18668 /* SPEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36CA15836A1300A18668 /* SPEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36CF15836A1300A18668 /* SPEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36CA15836A1300A18668 /* SPEffect.h */; };
 		D58B36D015836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
 		D58B36D115836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
 		D58B36D215836A1300A18668 /* SPEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36CB15836A1300A18668 /* SPEffect.m */; };
-		D58B36DE15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */; };
+		D58B36DE15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36DF15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36D815836A2100A18668 /* SPPositionOnlyEffect.h */; };
 		D58B36E015836A2100A18668 /* SPPositionOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */; };
 		D58B36E115836A2100A18668 /* SPPositionOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */; };
 		D58B36E215836A2100A18668 /* SPPositionOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36D915836A2100A18668 /* SPPositionOnlyEffect.m */; };
-		D58B36E315836A2100A18668 /* SPColorOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DA15836A2100A18668 /* SPColorOnlyEffect.h */; };
+		D58B36E315836A2100A18668 /* SPColorOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DA15836A2100A18668 /* SPColorOnlyEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36E415836A2100A18668 /* SPColorOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DA15836A2100A18668 /* SPColorOnlyEffect.h */; };
 		D58B36E515836A2100A18668 /* SPColorOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DB15836A2100A18668 /* SPColorOnlyEffect.m */; };
 		D58B36E615836A2100A18668 /* SPColorOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DB15836A2100A18668 /* SPColorOnlyEffect.m */; };
 		D58B36E715836A2100A18668 /* SPColorOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DB15836A2100A18668 /* SPColorOnlyEffect.m */; };
-		D58B36E815836A2100A18668 /* SPTextureOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DC15836A2100A18668 /* SPTextureOnlyEffect.h */; };
+		D58B36E815836A2100A18668 /* SPTextureOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DC15836A2100A18668 /* SPTextureOnlyEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36E915836A2100A18668 /* SPTextureOnlyEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36DC15836A2100A18668 /* SPTextureOnlyEffect.h */; };
 		D58B36EA15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DD15836A2100A18668 /* SPTextureOnlyEffect.m */; };
 		D58B36EB15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DD15836A2100A18668 /* SPTextureOnlyEffect.m */; };
 		D58B36EC15836A2100A18668 /* SPTextureOnlyEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36DD15836A2100A18668 /* SPTextureOnlyEffect.m */; };
-		D58B36F115836A3000A18668 /* SPSingleColorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36ED15836A3000A18668 /* SPSingleColorEffect.h */; };
+		D58B36F115836A3000A18668 /* SPSingleColorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36ED15836A3000A18668 /* SPSingleColorEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36F215836A3000A18668 /* SPSingleColorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36ED15836A3000A18668 /* SPSingleColorEffect.h */; };
 		D58B36F315836A3000A18668 /* SPSingleColorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36EE15836A3000A18668 /* SPSingleColorEffect.m */; };
 		D58B36F415836A3000A18668 /* SPSingleColorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36EE15836A3000A18668 /* SPSingleColorEffect.m */; };
 		D58B36F515836A3000A18668 /* SPSingleColorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36EE15836A3000A18668 /* SPSingleColorEffect.m */; };
-		D58B36F615836A3000A18668 /* SPParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36EF15836A3000A18668 /* SPParticleEffect.h */; };
+		D58B36F615836A3000A18668 /* SPParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36EF15836A3000A18668 /* SPParticleEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36F715836A3000A18668 /* SPParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36EF15836A3000A18668 /* SPParticleEffect.h */; };
 		D58B36F815836A3000A18668 /* SPParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36F015836A3000A18668 /* SPParticleEffect.m */; };
 		D58B36F915836A3000A18668 /* SPParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36F015836A3000A18668 /* SPParticleEffect.m */; };
 		D58B36FA15836A3000A18668 /* SPParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36F015836A3000A18668 /* SPParticleEffect.m */; };
-		D58B36FD15836A4200A18668 /* SPEffectsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36FB15836A4200A18668 /* SPEffectsManager.h */; };
+		D58B36FD15836A4200A18668 /* SPEffectsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36FB15836A4200A18668 /* SPEffectsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B36FE15836A4200A18668 /* SPEffectsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B36FB15836A4200A18668 /* SPEffectsManager.h */; };
 		D58B36FF15836A4200A18668 /* SPEffectsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36FC15836A4200A18668 /* SPEffectsManager.m */; };
 		D58B370015836A4200A18668 /* SPEffectsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36FC15836A4200A18668 /* SPEffectsManager.m */; };
 		D58B370115836A4200A18668 /* SPEffectsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B36FC15836A4200A18668 /* SPEffectsManager.m */; };
-		D58B370D15836A5300A18668 /* SPGLKitHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370215836A5300A18668 /* SPGLKitHelper.h */; };
+		D58B370D15836A5300A18668 /* SPGLKitHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370215836A5300A18668 /* SPGLKitHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B370E15836A5300A18668 /* SPGLKitHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370215836A5300A18668 /* SPGLKitHelper.h */; };
 		D58B370F15836A5300A18668 /* SPGLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370315836A5300A18668 /* SPGLKitHelper.m */; };
 		D58B371015836A5300A18668 /* SPGLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370315836A5300A18668 /* SPGLKitHelper.m */; };
 		D58B371115836A5300A18668 /* SPGLKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370315836A5300A18668 /* SPGLKitHelper.m */; };
 		D58B371215836A5300A18668 /* glUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370415836A5300A18668 /* glUtil.h */; };
 		D58B371315836A5300A18668 /* glUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370415836A5300A18668 /* glUtil.h */; };
-		D58B371415836A5300A18668 /* SPOffscreenRenderTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370515836A5300A18668 /* SPOffscreenRenderTarget.h */; };
+		D58B371415836A5300A18668 /* SPOffscreenRenderTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370515836A5300A18668 /* SPOffscreenRenderTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B371515836A5300A18668 /* SPOffscreenRenderTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370515836A5300A18668 /* SPOffscreenRenderTarget.h */; };
 		D58B371615836A5300A18668 /* SPOffscreenRenderTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370615836A5300A18668 /* SPOffscreenRenderTarget.m */; };
 		D58B371715836A5300A18668 /* SPOffscreenRenderTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370615836A5300A18668 /* SPOffscreenRenderTarget.m */; };
 		D58B371815836A5300A18668 /* SPOffscreenRenderTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370615836A5300A18668 /* SPOffscreenRenderTarget.m */; };
-		D58B371915836A5300A18668 /* SPMath.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370715836A5300A18668 /* SPMath.h */; };
+		D58B371915836A5300A18668 /* SPMath.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370715836A5300A18668 /* SPMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B371A15836A5300A18668 /* SPMath.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370715836A5300A18668 /* SPMath.h */; };
 		D58B371B15836A5300A18668 /* SPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370815836A5300A18668 /* SPMath.m */; };
 		D58B371C15836A5300A18668 /* SPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370815836A5300A18668 /* SPMath.m */; };
 		D58B371D15836A5300A18668 /* SPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370815836A5300A18668 /* SPMath.m */; };
-		D58B371E15836A5300A18668 /* SPAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370915836A5300A18668 /* SPAnimation.h */; };
+		D58B371E15836A5300A18668 /* SPAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370915836A5300A18668 /* SPAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B371F15836A5300A18668 /* SPAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370915836A5300A18668 /* SPAnimation.h */; };
 		D58B372015836A5300A18668 /* SPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370A15836A5300A18668 /* SPAnimation.m */; };
 		D58B372115836A5300A18668 /* SPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370A15836A5300A18668 /* SPAnimation.m */; };
 		D58B372215836A5300A18668 /* SPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370A15836A5300A18668 /* SPAnimation.m */; };
-		D58B372315836A5300A18668 /* SPParticleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370B15836A5300A18668 /* SPParticleManager.h */; };
+		D58B372315836A5300A18668 /* SPParticleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370B15836A5300A18668 /* SPParticleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D58B372415836A5300A18668 /* SPParticleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D58B370B15836A5300A18668 /* SPParticleManager.h */; };
 		D58B372515836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372615836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D58B372715836A5300A18668 /* SPParticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B370C15836A5300A18668 /* SPParticleManager.m */; };
 		D592D65E161C52EF00C753A4 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D65C161C52EF00C753A4 /* blur.fsh */; };
 		D592D65F161C52EF00C753A4 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D592D65D161C52EF00C753A4 /* blur.vsh */; };
-		D592D663161C533A00C753A4 /* SPBlurEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D592D661161C533A00C753A4 /* SPBlurEffect.h */; };
+		D592D663161C533A00C753A4 /* SPBlurEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D592D661161C533A00C753A4 /* SPBlurEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D592D664161C533A00C753A4 /* SPBlurEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D592D661161C533A00C753A4 /* SPBlurEffect.h */; };
 		D592D665161C533A00C753A4 /* SPBlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D592D662161C533A00C753A4 /* SPBlurEffect.m */; };
 		D592D666161C533A00C753A4 /* SPBlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D592D662161C533A00C753A4 /* SPBlurEffect.m */; };
@@ -103,7 +103,7 @@
 		D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
 		D59B26AF161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
 		D59B26B0161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B26AC161A642A00B8B7CF /* SPSoftParticleEffect.m */; };
-		D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */; };
+		D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D59B26B2161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */; };
 		D5E1ED9F158365AC00DBE86E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1ED9E158365AC00DBE86E /* Foundation.framework */; };
 		D5E1EDA5158365AC00DBE86E /* Spiral.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1EDA4158365AC00DBE86E /* Spiral.m */; };
@@ -115,32 +115,32 @@
 		D5E1EDBC158365AC00DBE86E /* SpiralTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1EDBB158365AC00DBE86E /* SpiralTests.m */; };
 		D5E1EDC7158365B800DBE86E /* Spiral.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1EDA4158365AC00DBE86E /* Spiral.m */; };
 		D5E1EDC9158365B800DBE86E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1ED9E158365AC00DBE86E /* Foundation.framework */; };
-		D5E1F37A1583694C00DBE86E /* SPBezierLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F36E1583694C00DBE86E /* SPBezierLoop.h */; };
+		D5E1F37A1583694C00DBE86E /* SPBezierLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F36E1583694C00DBE86E /* SPBezierLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F37B1583694C00DBE86E /* SPBezierLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F36E1583694C00DBE86E /* SPBezierLoop.h */; };
 		D5E1F37C1583694C00DBE86E /* SPBezierLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F36F1583694C00DBE86E /* SPBezierLoop.m */; };
 		D5E1F37D1583694C00DBE86E /* SPBezierLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F36F1583694C00DBE86E /* SPBezierLoop.m */; };
 		D5E1F37E1583694C00DBE86E /* SPBezierLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F36F1583694C00DBE86E /* SPBezierLoop.m */; };
-		D5E1F37F1583694C00DBE86E /* SPBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3701583694C00DBE86E /* SPBezierPath.h */; };
+		D5E1F37F1583694C00DBE86E /* SPBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3701583694C00DBE86E /* SPBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F3801583694C00DBE86E /* SPBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3701583694C00DBE86E /* SPBezierPath.h */; };
 		D5E1F3811583694C00DBE86E /* SPBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3711583694C00DBE86E /* SPBezierPath.m */; };
 		D5E1F3821583694C00DBE86E /* SPBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3711583694C00DBE86E /* SPBezierPath.m */; };
 		D5E1F3831583694C00DBE86E /* SPBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3711583694C00DBE86E /* SPBezierPath.m */; };
-		D5E1F3841583694C00DBE86E /* SPBezierPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3721583694C00DBE86E /* SPBezierPoint.h */; };
+		D5E1F3841583694C00DBE86E /* SPBezierPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3721583694C00DBE86E /* SPBezierPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F3851583694C00DBE86E /* SPBezierPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3721583694C00DBE86E /* SPBezierPoint.h */; };
 		D5E1F3861583694C00DBE86E /* SPBezierPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3731583694C00DBE86E /* SPBezierPoint.m */; };
 		D5E1F3871583694C00DBE86E /* SPBezierPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3731583694C00DBE86E /* SPBezierPoint.m */; };
 		D5E1F3881583694C00DBE86E /* SPBezierPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3731583694C00DBE86E /* SPBezierPoint.m */; };
-		D5E1F3891583694C00DBE86E /* SPStaticGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3741583694C00DBE86E /* SPStaticGeometry.h */; };
+		D5E1F3891583694C00DBE86E /* SPStaticGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3741583694C00DBE86E /* SPStaticGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F38A1583694C00DBE86E /* SPStaticGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3741583694C00DBE86E /* SPStaticGeometry.h */; };
 		D5E1F38B1583694C00DBE86E /* SPStaticGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3751583694C00DBE86E /* SPStaticGeometry.m */; };
 		D5E1F38C1583694C00DBE86E /* SPStaticGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3751583694C00DBE86E /* SPStaticGeometry.m */; };
 		D5E1F38D1583694C00DBE86E /* SPStaticGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3751583694C00DBE86E /* SPStaticGeometry.m */; };
-		D5E1F38E1583694C00DBE86E /* SPGeometricPrimitives.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3761583694C00DBE86E /* SPGeometricPrimitives.h */; };
+		D5E1F38E1583694C00DBE86E /* SPGeometricPrimitives.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3761583694C00DBE86E /* SPGeometricPrimitives.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F38F1583694C00DBE86E /* SPGeometricPrimitives.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3761583694C00DBE86E /* SPGeometricPrimitives.h */; };
 		D5E1F3901583694C00DBE86E /* SPGeometricPrimitives.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3771583694C00DBE86E /* SPGeometricPrimitives.m */; };
 		D5E1F3911583694C00DBE86E /* SPGeometricPrimitives.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3771583694C00DBE86E /* SPGeometricPrimitives.m */; };
 		D5E1F3921583694C00DBE86E /* SPGeometricPrimitives.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3771583694C00DBE86E /* SPGeometricPrimitives.m */; };
-		D5E1F3931583694C00DBE86E /* SPRegularPolygons.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3781583694C00DBE86E /* SPRegularPolygons.h */; };
+		D5E1F3931583694C00DBE86E /* SPRegularPolygons.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3781583694C00DBE86E /* SPRegularPolygons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E1F3941583694C00DBE86E /* SPRegularPolygons.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E1F3781583694C00DBE86E /* SPRegularPolygons.h */; };
 		D5E1F3951583694C00DBE86E /* SPRegularPolygons.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3791583694C00DBE86E /* SPRegularPolygons.m */; };
 		D5E1F3961583694C00DBE86E /* SPRegularPolygons.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E1F3791583694C00DBE86E /* SPRegularPolygons.m */; };
@@ -197,8 +197,8 @@
 		D58B370A15836A5300A18668 /* SPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAnimation.m; sourceTree = "<group>"; };
 		D58B370B15836A5300A18668 /* SPParticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParticleManager.h; sourceTree = "<group>"; };
 		D58B370C15836A5300A18668 /* SPParticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPParticleManager.m; sourceTree = "<group>"; };
-		D592D65C161C52EF00C753A4 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
-		D592D65D161C52EF00C753A4 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
+		D592D65C161C52EF00C753A4 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
+		D592D65D161C52EF00C753A4 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
 		D592D661161C533A00C753A4 /* SPBlurEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBlurEffect.h; sourceTree = "<group>"; };
 		D592D662161C533A00C753A4 /* SPBlurEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBlurEffect.m; sourceTree = "<group>"; };
 		D59B269F161A638A00B8B7CF /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = soft_particle.fsh; path = Shaders/soft_particle.fsh; sourceTree = SOURCE_ROOT; };
@@ -443,8 +443,6 @@
 				D5E1F3891583694C00DBE86E /* SPStaticGeometry.h in Headers */,
 				D5E1F38E1583694C00DBE86E /* SPGeometricPrimitives.h in Headers */,
 				D5E1F3931583694C00DBE86E /* SPRegularPolygons.h in Headers */,
-				D58B36C0158369FE00A18668 /* sourceUtil.h in Headers */,
-				D58B36C5158369FE00A18668 /* ShaderProgramLoader.h in Headers */,
 				D58B36CE15836A1300A18668 /* SPEffect.h in Headers */,
 				D58B36DE15836A2100A18668 /* SPPositionOnlyEffect.h in Headers */,
 				D58B36E315836A2100A18668 /* SPColorOnlyEffect.h in Headers */,
@@ -452,14 +450,16 @@
 				D58B36F115836A3000A18668 /* SPSingleColorEffect.h in Headers */,
 				D58B36F615836A3000A18668 /* SPParticleEffect.h in Headers */,
 				D58B36FD15836A4200A18668 /* SPEffectsManager.h in Headers */,
-				D58B370D15836A5300A18668 /* SPGLKitHelper.h in Headers */,
-				D58B371215836A5300A18668 /* glUtil.h in Headers */,
 				D58B371415836A5300A18668 /* SPOffscreenRenderTarget.h in Headers */,
-				D58B371915836A5300A18668 /* SPMath.h in Headers */,
-				D58B371E15836A5300A18668 /* SPAnimation.h in Headers */,
 				D58B372315836A5300A18668 /* SPParticleManager.h in Headers */,
+				D58B371E15836A5300A18668 /* SPAnimation.h in Headers */,
 				D59B26B1161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
 				D592D663161C533A00C753A4 /* SPBlurEffect.h in Headers */,
+				D58B371915836A5300A18668 /* SPMath.h in Headers */,
+				D58B370D15836A5300A18668 /* SPGLKitHelper.h in Headers */,
+				D58B36C0158369FE00A18668 /* sourceUtil.h in Headers */,
+				D58B36C5158369FE00A18668 /* ShaderProgramLoader.h in Headers */,
+				D58B371215836A5300A18668 /* glUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
