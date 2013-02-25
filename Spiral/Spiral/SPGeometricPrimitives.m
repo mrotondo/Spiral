@@ -12,6 +12,7 @@
 
 NSNumber *SPCircleID;
 NSNumber *SPQuadID;
+NSNumber *SPWireQuadID;
 
 static SPGeometricPrimitives *sharedGeometricPrimitives;
 
@@ -114,6 +115,11 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
     [self drawPrimitiveForKey:SPQuadID withColor:color andModelViewMatrix:modelViewMatrix];
 }
 
++ (void)drawWireQuadWithColor:(GLKVector4)color andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
+{
+    [self drawPrimitiveForKey:SPWireQuadID withColor:color andModelViewMatrix:modelViewMatrix];
+}
+
 + (void)drawRegularPolygonWithNumSides:(int)numSides withColor:(GLKVector4)color andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
 {
     [[self sharedGeometricPrimitives] ensureExistenceOfRegularPolygonWithNumSides:numSides];
@@ -128,6 +134,11 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
 + (void)drawQuadWithTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
 {
     [self drawPrimitiveForKey:SPQuadID withTexture:texture andModelViewMatrix:modelViewMatrix];
+}
+
++ (void)drawWireQuadWithTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
+{
+    [self drawPrimitiveForKey:SPWireQuadID withTexture:texture andModelViewMatrix:modelViewMatrix];
 }
 
 + (void)drawRegularPolygonWithNumSides:(int)numSides withTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
@@ -146,6 +157,11 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
     [self drawPrimitiveForKey:SPQuadID withBlock:block];
 }
 
++ (void)drawWireQuadWithBlock:(SPStaticGeometryDrawingBlock)block
+{
+    [self drawPrimitiveForKey:SPWireQuadID withBlock:block];
+}
+
 + (void)drawRegularPolygonWithNumSides:(int)numSides withBlock:(SPStaticGeometryDrawingBlock)block
 {
     [[self sharedGeometricPrimitives] ensureExistenceOfRegularPolygonWithNumSides:numSides];
@@ -160,18 +176,25 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
     if (self) {
         SPCircleID = @32;
         SPQuadID = @(-1);
+        SPWireQuadID = @(-2);
         primitives = [@{
         SPCircleID : [[SPStaticGeometry alloc] initWithGeometryInitializationBlock:
                       ^SPStaticGeometryInfoStruct
                       {
                           return [self generateRegularPolygonWithNumSides:32];
                       }],
-        SPQuadID : [[SPStaticGeometry alloc] initWithGeometryInitializationBlock:
-                    ^SPStaticGeometryInfoStruct
-                    {
-                        return [self generateQuadGeometry];
-                    }]
-        } mutableCopy];
+                      SPQuadID : [[SPStaticGeometry alloc] initWithGeometryInitializationBlock:
+                                  ^SPStaticGeometryInfoStruct
+                                  {
+                                      return [self generateQuadGeometry];
+                                  }],
+                      SPWireQuadID : [[SPStaticGeometry alloc] initWithGeometryInitializationBlock:
+                                      ^SPStaticGeometryInfoStruct
+                                      {
+                                          return [self generateWireQuadGeometry];
+                                      }]
+                      
+                      } mutableCopy];
     }
     return self;
 }
@@ -270,6 +293,39 @@ static SPGeometricPrimitives *sharedGeometricPrimitives;
     geometryInfo.indices = indices;
     
     geometryInfo.primitiveType = GL_TRIANGLE_STRIP;
+    
+    return geometryInfo;
+}
+
+- (SPStaticGeometryInfoStruct)generateWireQuadGeometry
+{
+    unsigned int numVertices = 4;
+    primitiveVertexStruct *vertices = (primitiveVertexStruct *)malloc(sizeof(primitiveVertexStruct) * numVertices);
+    unsigned int *indices = (unsigned int *)malloc(sizeof(unsigned int) * numVertices);
+    
+    vertices[0].position = GLKVector3Make(-0.5, -0.5, 0);
+    
+    vertices[1].position = GLKVector3Make(-0.5, 0.5, 0);
+    
+    vertices[2].position = GLKVector3Make(0.5, 0.5, 0);
+    
+    vertices[3].position = GLKVector3Make(0.5, -0.5, 0);
+    
+    for (int i = 0; i < numVertices; i++)
+    {
+        indices[i] = i;
+    }
+    
+    SPStaticGeometryInfoStruct geometryInfo;
+    geometryInfo.numVertices = numVertices;
+    geometryInfo.sizeOfVertex = sizeof(primitiveVertexStruct);
+    geometryInfo.vertices = vertices;
+    
+    geometryInfo.numIndices = numVertices;
+    geometryInfo.sizeOfIndex = sizeof(unsigned int);
+    geometryInfo.indices = indices;
+    
+    geometryInfo.primitiveType = GL_LINE_LOOP;
     
     return geometryInfo;
 }

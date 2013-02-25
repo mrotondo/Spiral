@@ -30,6 +30,10 @@ typedef struct _primitiveVertexStruct
 + (void)drawQuadWithTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
 + (void)drawQuadWithBlock:(SPStaticGeometryDrawingBlock)block;
 
++ (void)drawWireQuadWithColor:(GLKVector4)color andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
++ (void)drawWireQuadWithTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
++ (void)drawWireQuadWithBlock:(SPStaticGeometryDrawingBlock)block;
+
 + (void)drawRegularPolygonWithNumSides:(int)numSides withColor:(GLKVector4)color andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
 + (void)drawRegularPolygonWithNumSides:(int)numSides withTexture:(GLuint)texture andModelViewMatrix:(GLKMatrix4)modelViewMatrix;
 + (void)drawRegularPolygonWithNumSides:(int)numSides withBlock:(SPStaticGeometryDrawingBlock)block;
