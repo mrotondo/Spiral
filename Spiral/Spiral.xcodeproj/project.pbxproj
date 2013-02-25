@@ -285,12 +285,12 @@
 			path = Spiral;
 			sourceTree = "<group>";
 		};
-		D55BB8701584736900146CB5 /* Spiral Bundle */ = {
+		D55BB8701584736900146CB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D551FD2E1583764600D33881 /* Shaders */,
 			);
-			name = "Spiral Bundle";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		D58B36B9158369DA00A18668 /* Effects */ = {
@@ -332,7 +332,7 @@
 		D5E1ED90158365AC00DBE86E = {
 			isa = PBXGroup;
 			children = (
-				D55BB8701584736900146CB5 /* Spiral Bundle */,
+				D55BB8701584736900146CB5 /* Resources */,
 				D5E1EDA0158365AC00DBE86E /* Spiral */,
 				D5E1EDB4158365AC00DBE86E /* SpiralTests */,
 				D5E1ED9D158365AC00DBE86E /* Frameworks */,
