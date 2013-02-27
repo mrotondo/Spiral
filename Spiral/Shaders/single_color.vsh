@@ -5,9 +5,9 @@ precision mediump float;
 uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 
-attribute vec2 aPosition;
+attribute vec3 aPosition;
 
 void main (void)
 {
-	gl_Position	= projectionMatrix * modelViewMatrix * vec4(aPosition, 0, 1);
+	gl_Position	= projectionMatrix * modelViewMatrix * vec4(aPosition, 1);
 }
