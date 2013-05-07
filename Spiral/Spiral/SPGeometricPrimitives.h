@@ -14,6 +14,7 @@ typedef struct _primitiveVertexStruct
 {
     GLKVector3 position;
     GLKVector2 texCoord;
+    GLKVector3 normal;
 } primitiveVertexStruct;
 
 @interface SPGeometricPrimitives : NSObject

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D55DE2261738CF0B0013C237 /* SPBasicLightingEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D55DE2241738CF0B0013C237 /* SPBasicLightingEffect.h */; };
+		D55DE2271738CF0B0013C237 /* SPBasicLightingEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = D55DE2241738CF0B0013C237 /* SPBasicLightingEffect.h */; };
+		D55DE2281738CF0B0013C237 /* SPBasicLightingEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D55DE2251738CF0B0013C237 /* SPBasicLightingEffect.m */; };
+		D55DE2291738CF0B0013C237 /* SPBasicLightingEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = D55DE2251738CF0B0013C237 /* SPBasicLightingEffect.m */; };
 		D55E1F67158379F0006E74B8 /* color_only.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5C158379F0006E74B8 /* color_only.fsh */; };
 		D55E1F6A158379F0006E74B8 /* color_only.vsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5D158379F0006E74B8 /* color_only.vsh */; };
 		D55E1F6D158379F0006E74B8 /* particle.fsh in Sources */ = {isa = PBXBuildFile; fileRef = D55E1F5E158379F0006E74B8 /* particle.fsh */; };
@@ -158,6 +162,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D55DE2221738CECC0013C237 /* basic_lighting.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.fsh; path = Shaders/basic_lighting.fsh; sourceTree = SOURCE_ROOT; };
+		D55DE2231738CECC0013C237 /* basic_lighting.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.vsh; path = Shaders/basic_lighting.vsh; sourceTree = SOURCE_ROOT; };
+		D55DE2241738CF0B0013C237 /* SPBasicLightingEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBasicLightingEffect.h; sourceTree = "<group>"; };
+		D55DE2251738CF0B0013C237 /* SPBasicLightingEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBasicLightingEffect.m; sourceTree = "<group>"; };
 		D55E1F5C158379F0006E74B8 /* color_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = color_only.fsh; path = Shaders/color_only.fsh; sourceTree = SOURCE_ROOT; };
 		D55E1F5D158379F0006E74B8 /* color_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = color_only.vsh; path = Shaders/color_only.vsh; sourceTree = SOURCE_ROOT; };
 		D55E1F5E158379F0006E74B8 /* particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = particle.fsh; path = Shaders/particle.fsh; sourceTree = SOURCE_ROOT; };
@@ -266,6 +274,8 @@
 		D551FD2E1583764600D33881 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				D55DE2221738CECC0013C237 /* basic_lighting.fsh */,
+				D55DE2231738CECC0013C237 /* basic_lighting.vsh */,
 				D59B269F161A638A00B8B7CF /* soft_particle.fsh */,
 				D59B26A0161A638A00B8B7CF /* soft_particle.vsh */,
 				D55E1F5C158379F0006E74B8 /* color_only.fsh */,
@@ -314,6 +324,8 @@
 				D59B26AD161A642A00B8B7CF /* SPSoftParticleEffect.h */,
 				D592D661161C533A00C753A4 /* SPBlurEffect.h */,
 				D592D662161C533A00C753A4 /* SPBlurEffect.m */,
+				D55DE2241738CF0B0013C237 /* SPBasicLightingEffect.h */,
+				D55DE2251738CF0B0013C237 /* SPBasicLightingEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -460,6 +472,7 @@
 				D58B36C0158369FE00A18668 /* sourceUtil.h in Headers */,
 				D58B36C5158369FE00A18668 /* ShaderProgramLoader.h in Headers */,
 				D58B371215836A5300A18668 /* glUtil.h in Headers */,
+				D55DE2261738CF0B0013C237 /* SPBasicLightingEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +503,7 @@
 				D58B372415836A5300A18668 /* SPParticleManager.h in Headers */,
 				D59B26B2161A642A00B8B7CF /* SPSoftParticleEffect.h in Headers */,
 				D592D664161C533A00C753A4 /* SPBlurEffect.h in Headers */,
+				D55DE2271738CF0B0013C237 /* SPBasicLightingEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +648,7 @@
 				D58B372515836A5300A18668 /* SPParticleManager.m in Sources */,
 				D59B26AE161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 				D592D665161C533A00C753A4 /* SPBlurEffect.m in Sources */,
+				D55DE2281738CF0B0013C237 /* SPBasicLightingEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +723,7 @@
 				D59B26A6161A638A00B8B7CF /* soft_particle.vsh in Sources */,
 				D59B26B0161A642A00B8B7CF /* SPSoftParticleEffect.m in Sources */,
 				D592D667161C533A00C753A4 /* SPBlurEffect.m in Sources */,
+				D55DE2291738CF0B0013C237 /* SPBasicLightingEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
