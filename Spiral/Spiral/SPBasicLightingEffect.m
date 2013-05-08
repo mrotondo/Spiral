@@ -11,6 +11,9 @@
 #import "ShaderProgramLoader.h"
 
 @implementation SPBasicLightingEffect
+{
+    GLint normalMatrixUniformIndex;
+}
 
 + (void)load
 {
@@ -25,6 +28,7 @@
                         withTexCoord:NO];
     if (self)
     {
+        [self registerUniform:@"normalMatrix" atLocation:&normalMatrixUniformIndex];
     }
     return self;
 }
@@ -32,6 +36,8 @@
 - (void)prepareToDraw
 {
     [super prepareToDraw];
+    
+    glUniformMatrix3fv(normalMatrixUniformIndex, 1, GL_FALSE, self.transform.normalMatrix.m);
 }
 
 @end

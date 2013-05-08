@@ -162,8 +162,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D55DE2221738CECC0013C237 /* basic_lighting.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.fsh; path = Shaders/basic_lighting.fsh; sourceTree = SOURCE_ROOT; };
-		D55DE2231738CECC0013C237 /* basic_lighting.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.vsh; path = Shaders/basic_lighting.vsh; sourceTree = SOURCE_ROOT; };
+		D55DE2221738CECC0013C237 /* basic_lighting.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.fsh; path = Shaders/basic_lighting.fsh; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		D55DE2231738CECC0013C237 /* basic_lighting.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = basic_lighting.vsh; path = Shaders/basic_lighting.vsh; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		D55DE2241738CF0B0013C237 /* SPBasicLightingEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBasicLightingEffect.h; sourceTree = "<group>"; };
 		D55DE2251738CF0B0013C237 /* SPBasicLightingEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBasicLightingEffect.m; sourceTree = "<group>"; };
 		D55E1F5C158379F0006E74B8 /* color_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = color_only.fsh; path = Shaders/color_only.fsh; sourceTree = SOURCE_ROOT; };
