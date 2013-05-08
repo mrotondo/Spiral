@@ -13,6 +13,7 @@
 typedef struct _primitiveVertexStruct
 {
     GLKVector3 position;
+    GLKVector4 color;
     GLKVector2 texCoord;
     GLKVector3 normal;
 } primitiveVertexStruct;
