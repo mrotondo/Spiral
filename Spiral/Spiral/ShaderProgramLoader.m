@@ -93,6 +93,7 @@ err = glGetError();								\
         NSNumber *attributeIndexNumber = obj;
         glBindAttribLocation(prgName, [attributeIndexNumber unsignedIntValue], [attributeName UTF8String]);
     }];
+    GetGLError();
 	
 	//////////////////////////////////////
 	// Specify and compile VertexShader //

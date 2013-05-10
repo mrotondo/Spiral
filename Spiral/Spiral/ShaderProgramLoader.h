@@ -16,7 +16,7 @@ enum {
     COLOR_ATTRIB_IDX,
 	NORMAL_ATTRIB_IDX,
 	TEXCOORD_ATTRIB_IDX,
-    BODYTEXCOORD_ATTRIB_IDX
+    NEXT_ATTRIB_IDX
 };
 
 @interface ShaderProgramLoader : NSObject
